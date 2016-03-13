@@ -1,14 +1,10 @@
 # karkun 
 Nama mvc melayu versi baru.
-
-guna namespace.
-
+Guna namespace.
 Aplikasi konsep tabligh dalam programming.
-
-masih lagi idea baru
+Masih lagi idea baru
 
 # mvc melayu 
-
 MVC dalam bahasa melayu terutama nama folder, class dan pembolehubah.
 Dalam folder aplikasi erdapat 4 folder utama iaitu kawal,lihat,pustaka,tanya dimana
 kawal => controller, papar => view, kitab => library dan tanya => model. 
@@ -31,6 +27,9 @@ saya ada sediakan pilihan untuk mereka.
 Kalau perasan class PangkalanData extends PDO dan class DB_Mysqli saya kekalkan dalam bahasa inggeris. 
 Ini kerana saya cuba bagi tahu yang $this->db akan dirujuk terus kepada 
 sql yang akan guna istilah select,update,delete dan sebagainya.﻿
+
+# Standard
+http://www.php-fig.org/psr/psr-4/
 
 # Sumber ilham dari 
 http://jream.com/lab
