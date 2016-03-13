@@ -1,5 +1,5 @@
 # karkun
-=====================================
+==
 Nama mvc melayu versi baru.
 
 guna namespace.
@@ -9,7 +9,7 @@ Aplikasi konsep tabligh dalam programming.
 masih lagi idea baru
 
 # mvc melayu
-=========================================
+==
 MVC dalam bahasa melayu terutama nama folder, class dan pembolehubah.
 Dalam folder aplikasi erdapat 4 folder utama iaitu kawal,lihat,pustaka,tanya dimana
 kawal => controller, papar => view, kitab => library dan tanya => model. 
