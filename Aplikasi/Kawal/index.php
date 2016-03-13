@@ -2,7 +2,7 @@
 //namespace \Aplikasi\Kawal; //echo __NAMESPACE__; 
 class Index extends \Aplikasi\Kitab\Kawal
 {
-
+	
 	function __construct() 
 	{
 		echo '<br>class Index extends Kawal';
