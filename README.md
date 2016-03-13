@@ -1,5 +1,4 @@
-# karkun
-=
+# karkun 
 Nama mvc melayu versi baru.
 
 guna namespace.
@@ -8,8 +7,8 @@ Aplikasi konsep tabligh dalam programming.
 
 masih lagi idea baru
 
-# mvc melayu
-=
+# mvc melayu 
+
 MVC dalam bahasa melayu terutama nama folder, class dan pembolehubah.
 Dalam folder aplikasi erdapat 4 folder utama iaitu kawal,lihat,pustaka,tanya dimana
 kawal => controller, papar => view, kitab => library dan tanya => model. 
@@ -33,9 +32,7 @@ Kalau perasan class PangkalanData extends PDO dan class DB_Mysqli saya kekalkan 
 Ini kerana saya cuba bagi tahu yang $this->db akan dirujuk terus kepada 
 sql yang akan guna istilah select,update,delete dan sebagainya.﻿
 
-
 # Sumber ilham dari 
-=
 http://jream.com/lab
 
 
