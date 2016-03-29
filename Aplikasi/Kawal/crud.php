@@ -42,11 +42,11 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$medanUbah = $this->tanya->medanUbah2($cariID);
 		$medanID = '';
 	
-        if (!empty($cariID)) 
-        {
+		if (!empty($cariID)) 
+		{
 			$cari[] = array('fix'=>'like','atau'=>'WHERE','medan'=>$medanID,'apa'=>$cariID);
-            # 1. mula semak dalam jadual
-            $this->papar->senarai['data'] = $this->tanya->
+			# 1. mula semak dalam jadual
+			$this->papar->senarai['data'] = $this->tanya->
 				cariSemuaData($jadualUbah, $medanUbah, $cari, $susun = null);
 				//cariSql($jadualUbah, $medanUbah, $cari);
 
@@ -56,13 +56,13 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			
 			$this->papar->carian = $jumpaID;
 		}
-        else
-        {
-            $this->papar->carian='[tiada id diisi]';
-        }
-        
-        # isytihar pemboleubah
-        $this->papar->lokasi = 'Enjin - Ubah';
+		else
+		{
+			$this->papar->carian='[tiada id diisi]';
+		}
+				
+		# isytihar pemboleubah
+		$this->papar->lokasi = 'Enjin - Ubah';
 		$this->papar->cari = (isset($this->papar->senarai['data'][0][$medanID])) ? $jumpaID : $cariID;
 		$this->papar->_jadual = $jadualUbah;
 		
