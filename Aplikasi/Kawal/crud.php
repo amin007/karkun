@@ -96,8 +96,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 
     public function ubahSimpan($dataID)
     {
-        $posmen = array();
-        $medanID = '...';
+    	$posmen = array();
+    	$medanID = '...';
 		$senarai = array('');
     
         foreach ($_POST as $myTable => $value)
