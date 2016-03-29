@@ -63,9 +63,9 @@ function paparMedanInput($senarai)
 	$html = new \Aplikasi\Kitab\Html; 
 
 	foreach ($senarai as $myTable => $row)
-	{// mula ulang $row
+	{# mula ulang $row
 		for ($kira=0; $kira < count($row); $kira++)
-		{//print the data row // <button type="button" class="btn btn-info">Info</button>
+		{#print the data row // <button type="button" class="btn btn-info">Info</button>
 		#----------------------------------------------------------------------------
 		foreach ($row[$kira] as $key=>$data): echo "\n\t\t";
 			if (in_array($key,$lepas)): echo ''; else:
@@ -78,7 +78,7 @@ function paparMedanInput($senarai)
 		</div><?php 
 			endif;
 		endforeach;
-		}// final print the data row
+		}# final print the data row
 		#----------------------------------------------------------------------------
-	}// tamat ulang $row
+	}# tamat ulang $row
 }
