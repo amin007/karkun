@@ -68,16 +68,7 @@ else
 		#----------------------------------------------------------------------------
 	}// tamat ulang $row
 	echo "\n\t\t";
-	/*
-	echo '<div class="form-group">
-			<label for="inputSubmit" class="col-sm-3 control-label">Cth</label>
-			<div class="col-sm-6">
-				<input type="hidden" name="jadual" value="<?=$this->_jadual?>">
-				
-			</div>
-		</div>';
-	echo "\n\t\t";*/
-	if(isset($this->kawalan['kes'][0]['newss'])):
+	if(isset($this->senarai['data'][0]['id1'])):
 	?><div class="form-group">
 			<label for="inputSubmit" class="col-sm-3 control-label"><?=$this->_jadual?></label>
 			<div class="col-sm-6">
@@ -90,36 +81,4 @@ else
 
 <?php 
 endif;
-} // $this->carian=='sidap' - tamat ?><?php
-// mula untuk kod php+html
-function papar_jadual($row, $myTable, $pilih)
-{
-	if ($pilih == 2 && count($row) != 0)
-    {	?><!-- Jadual <?php echo $myTable ?> ########################################### -->
-		<span class="label label-success">Jadual <?php echo $myTable ?></span>
-        <table class="table table-striped">
-        <?php
-        $printed_headers = false; ## mula bina jadual
-        #-----------------------------------------------------------------
-        for ($kira=0; $kira < count($row); $kira++)
-        {##print the headers once:  
-            if ( !$printed_headers )
-            {	?><thead><tr>
-        <th>#</th>
-        <?php   foreach ( array_keys($row[$kira]) AS $tajuk ):
-			?><th><?php echo $tajuk ?></th>
-        <?php	endforeach; ?></tr></thead><?php
-                $printed_headers = true;
-            }#-----------------------------------------------------------------      
-            ## print the data row ?>
-            <tbody><tr>
-            <td><?php echo $kira+1 ?></td>
-            <?php foreach ( $row[$kira] as $key=>$data ) : ?>
-            <td><?php echo $data ?></td><?php endforeach; ?>
-        </tr></tbody>
-		<?php
-        }#-----------------------------------------------------------------
-        ?></table><?php
-    } 
-}
-// tamat untuk kod php+html 
+} // $this->carian=='sidap' - tamat 
