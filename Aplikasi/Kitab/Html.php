@@ -323,9 +323,7 @@ class Html
 			$input = '<p class="form-control-static text-info">' . $data . '</p>';
 		}
 		
-		# medan yang tak perlu dipaparkan
-		$lepas = array();
-		echo (in_array($key,$lepas)) ? '' : "\t$input";
+		echo $input;
 	}
 	
 	# mula untuk kod php+html 
