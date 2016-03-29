@@ -1,6 +1,6 @@
 <?php
 namespace Aplikasi\Kitab; //echo __NAMESPACE__; 
-class DB_Pdo extends PDO
+class DB_Pdo extends \PDO
 {
 	
 	public function __construct($DB_TYPE, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS)
