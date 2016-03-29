@@ -6,14 +6,13 @@ echo '$this->cari:'; print_r($this->cari);
 echo '$this->carian:'; print_r($this->carian); 
 echo '</pre>';
 //*/
-
+# set pembolehubah jika jumpa
 if(isset($this->senarai['data'][0]['id'])):
-	// set pembolehubah
-	$mencari = URL . 'kawalan/ubahCari/';
+	$mencari = URL . 'crud/ubahCari/';
 	$carian = $this->cari;
-	$mesej = '';//$carian .' ada dalam ' . $this->_jadual;
-else:	// set pembolehubah
-	$mencari = URL . 'kawalan/ubahCari/';
+	$mesej = ''; // $carian .' ada dalam ' . $this->_jadual;
+else: 
+	$mencari = URL . 'crud/ubahCari/';
 	$carian = null;
 	$mesej = '::' . $this->cari .' tiada dalam ' . $this->_jadual;
 endif;	
@@ -37,24 +36,39 @@ if ($this->carian=='[tiada id diisi]')
     echo 'data kosong<br>';
 }
 else
-{ // $this->carian=='id' - mula
-    $cari = $this->carian;
-    $s1 = '<span class="label">';
-    $s2 = '</span>';
-	$html = new \Aplikasi\Kitab\Html;
+{ # $this->carian=='id' - mula
 ?>
 	<form method="POST" action="<?php echo URL ?>kawalan/ubahSimpan/<?php echo $this->cari; ?>"
 	class="form-horizontal">
 	<!-- jadual rangka ########################################### --><?php
-	foreach ($this->senarai as $myTable => $row)
+	paparMedanInput($this->senarai);
+	echo "\n\t\t";
+	if(isset($this->senarai['data'][0]['id1'])):
+	?><div class="form-group">
+			<label for="inputSubmit" class="col-sm-3 control-label"><?=$this->_jadual?></label>
+			<div class="col-sm-6">
+				<input type="hidden" name="jadual" value="<?=$this->_jadual?>">
+				<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
+			</div>
+		</div>	
+	</form>
+	<hr>
+<?php 
+endif;
+} // $this->carian=='sidap' - tamat 
+
+function paparMedanInput($senarai)
+{
+	$lepas = array(); # medan yang tak perlu dipaparkan
+	$html = new \Aplikasi\Kitab\Html; 
+
+	foreach ($senarai as $myTable => $row)
 	{// mula ulang $row
 		for ($kira=0; $kira < count($row); $kira++)
 		{//print the data row // <button type="button" class="btn btn-info">Info</button>
 		#----------------------------------------------------------------------------
 		foreach ($row[$kira] as $key=>$data): echo "\n\t\t";
-			if (in_array($key,array('entah'))):
-				echo '';
-			else:
+			if (in_array($key,$lepas)): echo ''; else:
 		?><div class="form-group">
 			<label for="input<?php echo $key 
 			?>" class="col-sm-2 control-label"><?php echo $key ?></label>
@@ -67,18 +81,4 @@ else
 		}// final print the data row
 		#----------------------------------------------------------------------------
 	}// tamat ulang $row
-	echo "\n\t\t";
-	if(isset($this->senarai['data'][0]['id1'])):
-	?><div class="form-group">
-			<label for="inputSubmit" class="col-sm-3 control-label"><?=$this->_jadual?></label>
-			<div class="col-sm-6">
-				<input type="hidden" name="jadual" value="<?=$this->_jadual?>">
-				<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
-			</div>
-		</div>	
-	</form>
-	<hr>
-
-<?php 
-endif;
-} // $this->carian=='sidap' - tamat 
+}
