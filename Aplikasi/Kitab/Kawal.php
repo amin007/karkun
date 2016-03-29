@@ -13,22 +13,20 @@ class Kawal
 	{
 		
         $failTanya = GetMatchingFiles(GetContents(TANYA),$nama . '_tanya.php');
-		$path = $failTanya[0];
-		//$path = TANYA . $nama . '_tanya.php';
+		$tanya = $failTanya[0];
 		//echo '<br> class Kawal :: $nama : ' . $nama . '|';
 		//echo 'TANYA->' . TANYA . '|';
-		//echo 'senarai fail -><pre>'; print_r(GetContents(TANYA)) . '</pre>|';
 		//echo '$failTanya->'; print_r($failTanya) . '|';
-		//echo '$path->' . $path . '<br>';
-		//$tanyaNAMA = ucfirst($nama) . '_Tanya';
-		//echo '<br>$tanyaNAMA->' . $tanyaNAMA . '<br>';
+		//echo '$tanya->' . $tanya . '<br>';
+		//$tanyaNama = huruf('Besar', $nama) . '_Tanya';
+		//echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
 		
-		if (file_exists($path)) 
+		if (file_exists($tanya)) 
 		{
-			$tanyaNama = ucfirst($nama) . '_Tanya';
+			$tanyaNama = huruf('Besar', $nama) . '_Tanya';
 			//echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
 			
-			require_once $path;
+			require_once $tanya;
 			$this->tanya = new $tanyaNama();
 			/*
 			if (class_exists($tanyaNama)) echo '<br>class ' . $tanyaNama . ' wujud<br>';
