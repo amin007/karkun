@@ -5,7 +5,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 #==========================================================================================
 	function __construct() 
 	{
-		echo '<br>class Index extends Kawal';
+		//echo '<br>class Crud extends Kawal';
 		parent::__construct();
         \Aplikasi\Kitab\Kebenaran::kawalMasuk();
 	}
@@ -15,7 +15,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('index/index');
+		$this->papar->baca('crud/index');
 	}
 	
 	function tambah() 
@@ -23,56 +23,23 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('index/index');
+		$this->papar->baca('crud/tambah');
 	}
 	
-	function baca() 
+	function papar() 
 	{
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('index/index');
+		$this->papar->baca('crud/papar');
 	}
-	
-	public function medanUbah($cariID) 
-	{ 
-		# Set pemboleubah
-		# buat link
-		$alamat1 = 'http://xxx/crud/ubah2/",kp,"/'.$cariID.'/2010/2015/'; 
-		$url1 = '" <a target=_blank href=' . $alamat1 . '>SEMAK 1</a>"';
-		$url2 = 'concat("<a target=_blank href=' . $alamat1 . '>SEMAK 2</a>")';
-		# Set pemboleubah untuk sql
-        $senaraiMedan = 'id,'
-			. 'concat_ws("|",nama,operator,' . $url1 . ',' . $url2 . ') nama,'
-			. ' concat_ws("|",' . "\r"
-			. ' 	concat_ws("="," hasil",format(hasil,0)),' . "\r"
-			. ' 	concat_ws("="," belanja",format(belanja,0)),' . "\r"
-			. ' 	concat_ws("="," gaji",format(gaji,0)),' . "\r"
-			. ' 	concat_ws("="," aset",format(aset,0)),' . "\r"
-			. ' 	concat_ws("="," staf",format(staf,0)),' . "\r"
-			. ' 	concat_ws("="," stok akhir",format(stok,0))' . "\r"
- 			. ' ) as data5P,'
-			. ' concat_ws("|",' . "\r"
-			. ' 	concat_ws("="," tel",tel),' . "\r"
-			. ' 	concat_ws("="," fax",fax),' . "\r"
-			. ' 	concat_ws("="," orang",orang),' . "\r"
-			. ' 	concat_ws("="," notel",notel),' . "\r"
-			. ' 	concat_ws("="," nofax",nofax)' . "\r"
- 			. ' ) as dataHubungi,'
-			. 'concat_ws(" ",alamat1,alamat2,poskod,bandar) as alamat,' . "\r"
-			//. 'concat_ws(" ",no,batu,( if (jalan is null, "", concat("JALAN ",jalan) ) ),tmn_kg,poskod,dp_baru) alamat_baru,' . "\r"
-			. 'tel,notel,fax,nofax,responden,orang,email,esurat,'
-			. 'hasil,belanja,gaji,aset,staf,stok' . "\r" 
-			. '';	
-		return $senaraiMedan;
-	}
-    
+	   
     public function ubah($cariID = null) 
     {//echo '<br>Anda berada di class Crud:ubah($cariID) extends \Aplikasi\Kitab\Kawal<br>';
                 
         # senaraikan tatasusunan jadual dan setkan pembolehubah
-        $jadualUbah = '...';
-        $medanUbah = $this->medanUbah($cariID);
+        $jadualUbah = '';
+        $medanUbah = $this->tanya->medanUbah($cariID);
 		$medanID = 'id';
 	
         if (!empty($cariID)) 
@@ -85,8 +52,9 @@ class Crud extends \Aplikasi\Kitab\Kawal
 
 			if(isset($this->papar->senarai['data'][0][$medanID])):
 				$jumpaID = $this->papar->senarai['data'][0][$medanID];
-				$this->papar->carian = $medanID;
 			endif;
+			
+			$this->papar->carian = $medanID;
 		}
         else
         {
@@ -101,6 +69,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
         
 		/*# semak data
 		echo '<pre>';
+		echo '$this->papar->senarai:<br>'; print_r($this->papar->senarai); 
 		echo '$this->papar->cari:<br>'; print_r($this->papar->cari); 
 		echo '</pre>'; //*/
 		
@@ -221,7 +190,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		}
 
 		# pergi papar kandungan
-		$this->papar->baca('kawalan/buang', 1);
+		$this->papar->baca('crud/buang', 1);
 
     }
 #==========================================================================================	
