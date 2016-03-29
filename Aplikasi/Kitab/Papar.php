@@ -48,7 +48,8 @@ class Papar
 
 		if ($paparFail == false) 
 		{
-			Mulakan::failPaparTidakWujud();
+			\Aplikasi\Kitab\Route::failPaparTidakWujud();
+			//echo 'failPaparTidakWujud()';
 		}
 		//elseif (in_array($nama,$cariJQM)) 
 		elseif ( $namafail[0]=='mobile')
