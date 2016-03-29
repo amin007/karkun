@@ -5,7 +5,7 @@ class Kawal
 
 	function __construct() 
 	{
-		echo '<br>class Kawal';
+		//echo '<br>class Kawal';
 		$this->papar = new \Aplikasi\Kitab\Papar();
 	}
 	
@@ -14,25 +14,25 @@ class Kawal
 		
         $failTanya = GetMatchingFiles(GetContents(TANYA),$nama . '_tanya.php');
 		$tanya = $failTanya[0];
-		//echo '<br> class Kawal :: $nama : ' . $nama . '|';
-		//echo 'TANYA->' . TANYA . '|';
-		//echo '$failTanya->'; print_r($failTanya) . '|';
-		//echo '$tanya->' . $tanya . '<br>';
-		//$tanyaNama = huruf('Besar', $nama) . '_Tanya';
-		//echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
+		/*echo '<br> class Kawal :: $nama : ' . $nama . '|';
+		//echo 'TANYA->' . TANYA . '';
+		echo '<pre>$failTanya->'; print_r($failTanya) . '</pre>';
+		echo '$tanya->' . $tanya . '<br>';
+		$tanyaNama = '\\Aplikasi\Tanya\\' . huruf('Besar', $nama) . '_Tanya';
+		echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
+		//*/
 		
 		if (file_exists($tanya)) 
 		{
-			$tanyaNama = huruf('Besar', $nama) . '_Tanya';
+			$tanyaNama = '\\Aplikasi\Tanya\\' . huruf('Besar', $nama) . '_Tanya';
 			//echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
 			
 			require_once $tanya;
 			$this->tanya = new $tanyaNama();
-			/*
-			if (class_exists($tanyaNama)) echo '<br>class ' . $tanyaNama . ' wujud<br>';
-			else echo '<br>class ' . $tanyaNama . ' tak wujud<br>';
-			*/
-		}
+			
+			//if (class_exists($tanyaNama)) echo '<br>class ' . $tanyaNama . ' wujud<br>';
+			//else echo '<br>class ' . $tanyaNama . ' tak wujud<br>';
+		}//*/
 					
 	}
 
