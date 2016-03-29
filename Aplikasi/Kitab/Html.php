@@ -252,7 +252,7 @@ class Html
 			return $papar;
 	}
 	
-	function cariInput($cariKhas,$jadual,$kira,$key,$data)
+	public function cariInput($cariKhas,$jadual,$kira,$key,$data)
 	{	# istihar pembolehubah 
 		$name = 'name="' . $jadual . '[' . $key . ']"';
 		$inputText = $name . ' value="' . $data . '"';
