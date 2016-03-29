@@ -1,11 +1,13 @@
 <?php
-
-class Sesat extends Kawal 
+namespace Aplikasi\Kawal; //echo __NAMESPACE__; 
+class Sesat extends \Aplikasi\Kitab\Kawal
 {
 
 	function __construct() 
 	{
 		parent::__construct();
+		$this->_tajukAtas = 'Enjin - Sesat';
+		$this->_folder = 'sesat';
 	}
 	
 	function index() 
@@ -18,6 +20,20 @@ class Sesat extends Kawal
 	{
 		$this->papar->mesej = 'Class wujud tapi parameter/method/fungsi tidak wujud';
 		$this->papar->baca('sesat/index');
+	}
+	
+	function classTidakWujud($amaran) 
+	{
+		$this->papar->mesej = $amaran;
+		$this->papar->Tajuk_Muka_Surat = $this->_tajukAtas . $this->papar->mesej;		
+		$this->papar->baca($this->_folder . '/index');
+	}
+
+	function failTidakWujud() 
+	{
+		$this->papar->mesej = 'Fail tidak wujud dalam PAPAR';
+		$this->papar->Tajuk_Muka_Surat = $this->_tajukAtas . $this->papar->mesej;		
+		$this->papar->baca($this->_folder . '/index');
 	}
 	
 ################################################################################################
