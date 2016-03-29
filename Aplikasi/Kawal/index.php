@@ -1,5 +1,5 @@
 <?php
-namespace \Aplikasi\Kawal; //echo __NAMESPACE__; 
+namespace Aplikasi\Kawal; //echo __NAMESPACE__; 
 class Index extends \Aplikasi\Kitab\Kawal
 {
 	
