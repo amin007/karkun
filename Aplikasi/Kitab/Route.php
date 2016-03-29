@@ -131,7 +131,7 @@ class Route
     function sesat()
     {
         require KAWAL . '/sesat.php';
-        $kawal = new Sesat();
+        $kawal = new \Aplikasi\Kawal\Sesat();
         $kawal->index();
         return false;
     }
@@ -139,8 +139,33 @@ class Route
 	function parameter()
     {
         require KAWAL . '/sesat.php';
-        $kawal = new Sesat();
+        $kawal = new \Aplikasi\Kawal\Sesat();
         $kawal->parameter();
+        return false;
+    }
+	
+	function classKawalTidakWujud($amaran)
+    {
+        require KAWAL . '/sesat.php';
+        $kawal = new \Aplikasi\Kawal\Sesat();
+        $kawal->classTidakWujud($amaran);
+        return false;
+    }
+		
+	public static function classTanyaTidakWujud($amaran)
+    {
+        require KAWAL . '/sesat.php';
+        $kawal = new \Aplikasi\Kawal\Sesat();
+        $kawal->classTidakWujud($amaran);
+        //return false;
+		exit;
+    }
+	
+	public static function failPaparTidakWujud()
+    {
+        require KAWAL . '/sesat.php';
+        $kawal = new \Aplikasi\Kawal\Sesat();
+        $kawal->failTidakWujud();
         return false;
     }
 
