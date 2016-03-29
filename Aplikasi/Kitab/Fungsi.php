@@ -58,29 +58,29 @@ function senarai_kakitangan()
 # semak data
 function semakDataPOST($semua)
 {
-			foreach ($_POST as $myTable => $value)
-			{	
-				if ( in_array($myTable,$semua) ):
-					//echo "myTable : $myTable <br>";
-					foreach ($value as $kekunci => $papar):
-						$ubahMedan = $_POST['medan'][$myTable][$kekunci];
-						if ($kekunci != $ubahMedan)
-						{	/*echo "$myTable - $kekunci = $ubahMedan | berubah :"
-							. '$posmen['.$myTable.']['.$ubahMedan.'] '
-							. '<= $posmen['.$myTable.']['.$kekunci.']='
-							. bersih($papar) . '<br>';*/
-							
-							$posmen[$myTable][$ubahMedan] = bersih($papar);
-							unset($posmen[$myTable][$kekunci]);
-						}
-						elseif ($papar == null || $papar == '0')
-							unset($posmen[$myTable][$kekunci]);
-						else 
-							$posmen[$myTable][$kekunci] = bersih($papar);
-						
-					endforeach;
-				endif;
-			}
+	foreach ($_POST as $myTable => $value)
+	{	
+		if ( in_array($myTable,$semua) ):
+			//echo "myTable : $myTable <br>";
+			foreach ($value as $kekunci => $papar):
+				$ubahMedan = $_POST['medan'][$myTable][$kekunci];
+				if ($kekunci != $ubahMedan)
+				{	/*echo "$myTable - $kekunci = $ubahMedan | berubah :"
+					. '$posmen['.$myTable.']['.$ubahMedan.'] '
+					. '<= $posmen['.$myTable.']['.$kekunci.']='
+					. bersih($papar) . '<br>';*/
+					
+					$posmen[$myTable][$ubahMedan] = bersih($papar);
+					unset($posmen[$myTable][$kekunci]);
+				}
+				elseif ($papar == null || $papar == '0')
+					unset($posmen[$myTable][$kekunci]);
+				else 
+					$posmen[$myTable][$kekunci] = bersih($papar);
+				
+			endforeach;
+		endif;
+	}
 	
 	return $posmen;
 }
