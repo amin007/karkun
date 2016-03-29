@@ -10,7 +10,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 	
 	public function medanUbah2($cariID)
 	{
-		$senaraiMedan = 'id,Nama_Penuh,email,nohp';
+		$senaraiMedan = 'no as id,Nama_Penuh,email,nohp';
 		return $senaraiMedan;
 	}
 	
