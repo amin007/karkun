@@ -7,7 +7,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<br>class Crud extends Kawal';
 		parent::__construct();
-        \Aplikasi\Kitab\Kebenaran::kawalMasuk();
+		\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 	}
 	
 	function index() 
