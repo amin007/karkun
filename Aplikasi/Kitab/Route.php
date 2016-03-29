@@ -22,6 +22,7 @@ class Route
          */
          
         $url[0] = (empty($url[0])) ? 'index' : $url[0];
+        $Url[0] = '\\Aplikasi\Kawal\\' . huruf('Besar', $url[0]);
  
         /* 3. dapatkan fail dalam folder KAWAL yang serupa dengan $url[0]
          * dan masukkan dalam $fail
@@ -29,9 +30,11 @@ class Route
  
         $failKawal = GetMatchingFiles(GetContents(KAWAL),$url[0] . '.php');
 		$fail = $failKawal[0];
+
         //echo '<hr>KAWAL=' . KAWAL . '<br>';
 		//echo '<pre>$failKawal='; print_r($failKawal) . '</pre>';
         //echo '<hr>$fail->' . $fail . '<br>';
+        //echo '<hr>$url[0]->' . $Url[0] . '<br>';
          
         /*
          * 4. semak sama ada dalam folder KAWAL $fail benar2 wujud
@@ -41,7 +44,7 @@ class Route
         if (file_exists($fail))
         {
 			require $fail;
-			$kawal = new Aplikasi\Kawal\$url[0];
+			$kawal = new $Url[0];
 			$kawal->muatTanya($url[0]);
 			# jika $url[1] tak disetkan, bagi $method='index'
 			$method = (isset($url[1])) ? $url[1] : 'index';
@@ -49,7 +52,7 @@ class Route
 			if ( !method_exists($kawal, $method))
 				$this->parameter();			
 			else $this->cari_pengawal($kawal, $url);
-			
+			//*/
         }
         else
         {
