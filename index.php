@@ -25,7 +25,7 @@ require 'tatarajah.php';
  * @param string $class The fully-qualified class name.
  * @return void
  */
-spl_autoload_register(function ($namaClass) 
+spl_autoload_register(function ($namaClass)
 {
 	# tentukan namespace 
 	$prefix = 'Aplikasi\\Kitab\\'; //echo '<br>' . $prefix;
