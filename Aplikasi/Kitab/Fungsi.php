@@ -55,7 +55,7 @@ function senarai_kakitangan()
     return $pegawai;
 }
 
-// semak data
+# semak data
 function semakDataPOST($semua)
 {
 			foreach ($_POST as $myTable => $value)
@@ -85,41 +85,41 @@ function semakDataPOST($semua)
 	return $posmen;
 }
 
-// sql limit
+# sql limit
 function pencamSqlLimit($bilSemua, $item, $ms)
 {
-    // Tentukan bilangan jumlah dalam DB:
+    # Tentukan bilangan jumlah dalam DB:
     $jum['bil_semua'] = $bilSemua;
-    // ambil halaman semasa, jika tiada, cipta satu! 
-    $jum['page'] = ( !isset($ms) ) ? 1 : $ms; // mukasurat
-    // berapa item dalam satu halaman
-    $jum['max'] = ( !isset($item) ) ? 30 : $item; // item
-    // Tentukan had query berasaskan nombor halaman semasa.
+    # ambil halaman semasa, jika tiada, cipta satu! 
+    $jum['page'] = ( !isset($ms) ) ? 1 : $ms; # mukasurat
+    # berapa item dalam satu halaman
+    $jum['max'] = ( !isset($item) ) ? 30 : $item; # item
+    # Tentukan had query berasaskan nombor halaman semasa.
     $dari = (($jum['page'] * $jum['max']) - $jum['max']); 
-    $jum['dari'] = ( !isset($dari) ) ? 0 : $dari; // dari
-    // Tentukan bilangan halaman. 
+    $jum['dari'] = ( !isset($dari) ) ? 0 : $dari; # dari
+    # Tentukan bilangan halaman. 
     $jum['muka_surat'] = ceil($jum['bil_semua'] / $jum['max']);
-    // nak tentukan berapa bil jumlah dlm satu muka surat
+    # nak tentukan berapa bil jumlah dlm satu muka surat
     $jum['bil'] = $jum['dari']+1; 
     
     return $jum;
 }
-// format perpuluhan
+# format perpuluhan
 function kiraPerpuluhan($kiraan, $perpuluhan = 1)
 {
-	// pecahan kepada ratus
+	# pecahan kepada ratus
 	return number_format($kiraan,$perpuluhan,'.',',');
 } 
 
 function kira($kiraan)
 {
-	// pecahan kepada ratus
+	# pecahan kepada ratus
 	return number_format($kiraan,0,'.',',');
 } 
 
 function kira2($dulu,$kini)
 {
-	// buat bandingan dan pecahan kepada ratus
+	# buat bandingan dan pecahan kepada ratus
 	return @number_format((($kini-$dulu)/$dulu)*100,0,'.',',');
 	//@$kiraan=(($kini-$dulu)/$dulu)*100;
 }
@@ -131,7 +131,7 @@ function kira3($kira,$n)
 
 function pilihKeyData($key,$keyData,$data)
 {
-	//echo '$key:' . $key; single key
+	//echo '$key:' . $key; 
 	//echo '$keyData:[' . $keyData[$key] . ']';
 	//echo '$data:[' . $data[$keyData[$key]]  . ']';
 	return $keyData[$key];
@@ -139,7 +139,7 @@ function pilihKeyData($key,$keyData,$data)
 
 function pilihValueData($key,$keyData,$data)
 {
-	//echo '$key:' . $key; single key
+	//echo '$key:' . $key; 
 	//echo '$keyData:[' . $keyData[$key] . ']';
 	//echo '$data:[' . $data[$keyData[$key]]  . ']';
 	return $data[$keyData[$key]];
@@ -156,7 +156,7 @@ function huruf($jenis , $papar)
 	*/
 	
 	switch ($jenis) 
-	{// mula - pilih $jenis
+	{# mula - pilih $jenis
 	case "BESAR":
 		$papar = strtoupper($papar);
 		break;
@@ -169,7 +169,7 @@ function huruf($jenis , $papar)
 	case "Besar_Depan":
 		$papar = mb_convert_case($papar, MB_CASE_TITLE);
 		break;
-	}// tamat - pilih $jenis
+	}# tamat - pilih $jenis
 	
 	return $papar;
 
@@ -227,10 +227,10 @@ function gambar_latarbelakang($lokasi)
     return $papar[$today];
 }
 
-// lisfile2 - mula
+# lisfile2 - mula
 function GetMatchingFiles($files, $search) 
 {
-	// Split to name and filetype
+	# Split to name and filetype
 	if(strpos($search,".")) 
 	{
 		$baseexp=substr($search,0,strpos($search,"."));
@@ -242,17 +242,17 @@ function GetMatchingFiles($files, $search)
 		$typeexp="";
 	} 
 		
-	// Escape all regexp Characters 
+	# Escape all regexp Characters 
 	$baseexp=preg_quote($baseexp); 
 	$typeexp=preg_quote($typeexp); 
 		
-	// Allow ? and *
+	# Allow ? and *
 	$baseexp=str_replace(array("\*","\?"), array(".*","."), $baseexp);
 	$typeexp=str_replace(array("\*","\?"), array(".*","."), $typeexp);
 		   
-	// Search for Matches
+	# Search for Matches
 	$i=0;
-	$matches=null; // $matches adalah array()
+	$matches=null; # $matches adalah array()
 	foreach($files as $file) 
 	{
 		$filename=basename($file);
@@ -278,7 +278,7 @@ function GetMatchingFiles($files, $search)
 	return $matches;
 }
 
-// Returns all Files contained in given dir, including subdirs
+# Returns all Files contained in given dir, including subdirs
 function GetContents($dir,$files=array()) 
 {
 	if(!($res=opendir($dir))) exit("$dir doesn't exist!");
@@ -291,4 +291,4 @@ function GetContents($dir,$files=array())
 	closedir($res);
 	return $files;
 }
-// listfile2 - tamat
+# listfile2 - tamat
