@@ -12,8 +12,8 @@ class Route
  
     function __construct()
     {
-        // 1. dapatkan fungsi dpt_url() dari fail fungsi.php
-        // dan masukkan dalam $url
+        # 1. dapatkan fungsi dpt_url() dari fail fungsi.php
+        # dan masukkan dalam $url
         $url = dpt_url(); //echo '<br>$url->'; print_r($url) . '';
          
         /* 2. semak sama ada $url[0] kosong
@@ -31,7 +31,7 @@ class Route
 		$fail = $failKawal[0];
         //echo '<hr>KAWAL=' . KAWAL . '<br>';
 		//echo '<pre>$failKawal='; print_r($failKawal) . '</pre>';
-        //echo '<hr>$failKawal->' . $fail . '<br>';
+        //echo '<hr>$fail->' . $fail . '<br>';
          
         /*
          * 4. semak sama ada dalam folder KAWAL $fail benar2 wujud
@@ -41,7 +41,7 @@ class Route
         if (file_exists($fail))
         {
 			require $fail;
-			$kawal = new $url[0];
+			$kawal = new Aplikasi\Kawal\$url[0];
 			$kawal->muatTanya($url[0]);
 			# jika $url[1] tak disetkan, bagi $method='index'
 			$method = (isset($url[1])) ? $url[1] : 'index';
