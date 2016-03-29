@@ -64,7 +64,7 @@ class DB_Mysqli
 	{
 		try
 		{
-			$this->mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+			$this->mysqli = new \mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 			//parent::__construct($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 			//parent::__construct($DB_TYPE.':host='.$DB_HOST.';dbname='.$DB_NAME, $DB_USER, $DB_PASS);
 		}
