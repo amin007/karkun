@@ -27,6 +27,8 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 				'keterangan' => '',					  
 				   'jantina' => 'lelaki',
 				  'password' => '123abd456',
+				    'terima' => '2016-03-30',
+				     'hasil' => '123654',
 				));
 		
 		# tiada nilai
