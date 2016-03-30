@@ -13,7 +13,7 @@ echo '</pre>';
 if(isset($this->senarai['data'][0]['id'])):
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = $this->cariMedan;
-	$mesej = ''; // $carian .' ada dalam ' . $this->_jadual;
+	$mesej = ''; // $this->cariApa .' ada dalam ' . $this->_jadual;
 else: 
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = null;
