@@ -392,11 +392,10 @@ class Html
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
 			<table  border="1" class="excel" id="example"><?php
-			// mula bina jadual
-			$printed_headers = false; 
+			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	//print the headers once: 	
+			{	# print the headers once: 	
 				if ( !$printed_headers ) : ?>
 			<thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
@@ -405,8 +404,7 @@ class Html
 			</tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			#-----------------------------------------------------------------		 
-			//print the data row ?>
+			#- print the data row --------------------------------------------?>
 			<tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
@@ -422,11 +420,10 @@ class Html
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
 			<table  border="1" class="excel" id="example"><?php
-			# mula bina jadual
-			$printed_headers = false; 
+			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	//print the headers once: 	
+			{	# cetak tajuk hanya sekali sahaja :
 				if ( !$printed_headers ) : ?>
 			<thead><tr>
 			<th>#</th><?php
@@ -441,8 +438,7 @@ class Html
 			?></tr></thead><?php
 					$printed_headers = true; 
 				endif; 
-			#-----------------------------------------------------------------		 
-			# cetak hasil $data ?>
+			#- cetak hasil $data ---------------------------------------------?>
 			<tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php
@@ -487,14 +483,14 @@ class Html
 			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
-			{	# print the headers once: 	
+			{	# cetak tajuk hanya sekali sahaja :
 				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th><?php endforeach; 
 			?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			# print the data row--------------------------------------------
+			# cetak hasil $data --------------------------------------------
 			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td><?php 
 				foreach ( $row[$kira] as $key=>$data ) : 
