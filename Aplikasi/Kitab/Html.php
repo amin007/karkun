@@ -266,8 +266,26 @@ class Html
 				   . $tabline2 . '<pre>' . $data . '</pre>'
 				   . '';
 		}
-		elseif(in_array($key,array('tel','fax')))
-		{#kod utk input saiz kecil
+		elseif(in_array($key,array('nama','emailx')))
+		{#kod utk input text saiz besar
+			$input = '<div class="input-group input-group-lg">' . $tabline
+				   . '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<input type="text" ' . $inputText 
+				   . ' class="form-control">'
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif(in_array($key,array('email')))
+		{#kod utk input text saiz biasa
+			$input = '<div class="input-group input-group">' . $tabline
+				   . '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<input type="text" ' . $inputText 
+				   . ' class="form-control">'
+				   . $tabline2 . '</div>'
+				   . '';
+		}
+		elseif(in_array($key,array('tel','fax','nohp')))
+		{#kod utk input text saiz kecil
 			$input = '<div class="input-group input-group-sm">' . $tabline
 				   . '<span class="input-group-addon">' . $data . '</span>' . $tabline
 				   . '<input type="text" ' . $inputText 
