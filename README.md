@@ -13,6 +13,13 @@ Dari apa yang saya faham model ada berkaitan dengan database.
 Database ada kaitan dengan sql. Sql ada kaitan dengan query. 
 Query ada berkaitan pertanyaan. Jadi saya terjemah Model = Pertanyaan.
 
+Dalam tabligh ada istilah taskil yang bertujuan memujuk orang keluar pada jalan Allah.
+Biasanya ada orang yang akan ambil nama selepas bayan(ceramah usaha atas iman amal).
+Di samping itu ada juga fikir harian, mesyuarat mingguan dan malam karguzari.
+
+Jadi antara cadangan kita tukar istilah 4 folder utama adalah
+fikir => controller, bayan => view, kitab => library dan taskil => model. 
+
 Tujuan guna verb (kata kerja) hanya pendek kata. Jadikan 5 huruf bagi setiap konsep mvc. 
 Asalnya cuba hendak terjemahkan konsep mvc semudah mungkin dalam bahasa melayu. 
 Mungkin akan dibaiki jika jumpa perkataan sesuai.
