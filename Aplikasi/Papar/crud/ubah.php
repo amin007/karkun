@@ -44,7 +44,7 @@ else
 	$lepas = array(); # medan yang tak perlu dipaparkan
 	$html = new \Aplikasi\Kitab\Html; 
 ?>
-	<form method="POST" action="<?php echo URL ?>kawalan/ubahSimpan/<?php echo $this->jumpa; ?>"
+	<form method="POST" action="<?php echo URL ?>crud/ubahSimpan/<?php echo $this->jumpa; ?>"
 	class="form-horizontal">
 	<!-- jadual rangka ########################################### --><?php
 	paparMedanInput($this->senarai, $lepas, $html, $this->_jadual, $this->_paparSahaja);
