@@ -303,6 +303,16 @@ class Html
 				   . $tabline2 . '</div>'
 				   . '';
 		}
+		elseif ( in_array($key,array('password')) )
+		{#kod untuk input password
+			$input = '<div class="input-group input-group-sm">' . $tabline
+				   . '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<input type="password" ' . $name
+				   . $tabline . ' placeholder="Tukar kata laluan"'
+				   . ' class="form-control">'
+				   . $tabline2 . '</div>'
+				   . '';			
+		}
 		elseif ( in_array($key,array('lawat','terima','hantar','hantar_prosesan')) )
 		{#kod utk input tarikh
 		#terima - style="font-family:sans-serif;font-size:10px;"
@@ -320,7 +330,7 @@ class Html
 				   . '';			   
 		}
 		elseif ( in_array($key,array('jantina')) )
-		{
+		{#kod untuk input select option
 			# set pembolehubah
 			$input2 = null;
 			$senaraiJantina = array('lelaki','perempuan');
