@@ -10,8 +10,25 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 	
 	public function medanUbah2($cariID)
 	{
-		$senaraiMedan = 'no as id,Nama_Penuh,email,nohp';
+		$senaraiMedan = 'no,Nama_Penuh nama,email,nohp';
 		return $senaraiMedan;
+	}
+	
+	public function tatasusunanUbah2($jadual, $medan, $cari, $susun) 
+	{
+		return $hasil = array
+		(
+			'data' => array
+			(
+				'0' => array
+				(
+					'no'   => '2',
+					'nama'   => 'Fulan Bin Fulan',
+					'email'   => fulan@mail.com,
+					'nohp'   => 0123456789
+				)
+			)
+		);
 	}
 	
 	public function medanUbah($cariID) 
