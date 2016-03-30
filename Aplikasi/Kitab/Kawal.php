@@ -9,17 +9,14 @@ class Kawal
 		$this->papar = new \Aplikasi\Kitab\Papar();
 	}
 	
-	public function muatTanya($nama) 
+	public function jemaahTaskil($nama) 
 	{
-		
-        $failTanya = GetMatchingFiles(GetContents(TANYA),$nama . '_tanya.php');
+		$failTanya = GetMatchingFiles(GetContents(TANYA),$nama . '_tanya.php');
 		$tanya = $failTanya[0];
 		/*echo '<br> class Kawal :: $nama : ' . $nama . '|';
-		//echo 'TANYA->' . TANYA . '';
+		echo 'TANYA->' . TANYA . '';
 		echo '<pre>$failTanya->'; print_r($failTanya) . '</pre>';
 		echo '$tanya->' . $tanya . '<br>';
-		$tanyaNama = '\\Aplikasi\Tanya\\' . huruf('Besar', $nama) . '_Tanya';
-		echo '<br>$tanyaNama->' . $tanyaNama . '<br>';
 		//*/
 		
 		if (file_exists($tanya)) 
@@ -33,7 +30,7 @@ class Kawal
 			//if (class_exists($tanyaNama)) echo '<br>class ' . $tanyaNama . ' wujud<br>';
 			//else echo '<br>class ' . $tanyaNama . ' tak wujud<br>';
 		}//*/
-					
+
 	}
 
 }

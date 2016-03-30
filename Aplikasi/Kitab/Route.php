@@ -45,7 +45,7 @@ class Route
         {
 			require $fail;
 			$kawal = new $Url[0];
-			$kawal->muatTanya($url[0]);
+			$kawal->jemaahTaskil($url[0]);
 			# jika $url[1] tak disetkan, bagi $method='index'
 			$method = (isset($url[1])) ? $url[1] : 'index';
 			# semak sama ada method ada dalam $kawal
