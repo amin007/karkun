@@ -34,13 +34,12 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$this->papar->baca('crud/papar');
 	}
 	   
-    public function ubah($cariID = null) 
+    public function ubah($cariID = null, $medanID = null,$jadualUbah = null) 
     {//echo '<br>Anda berada di class Crud:ubah($cariID) extends \Aplikasi\Kitab\Kawal<br>';
                 
         # senaraikan tatasusunan jadual dan setkan pembolehubah
-		$jadualUbah = '';
 		$medanUbah = $this->tanya->medanUbah2($cariID);
-		$medanID = '';
+		//$medanID = ''; $jadualUbah = ''; # 
 	
 		if (!empty($cariID)) 
 		{
