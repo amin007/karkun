@@ -1,11 +1,14 @@
 <?php
-/*
+
 echo '<pre>';
 echo '$this->senarai:<br>'; print_r($this->senarai); 
-echo '$this->cari:'; print_r($this->cari); 
-echo '$this->carian:'; print_r($this->carian); 
+echo '<br>$this->cari:'; print_r($this->cari); 
+echo '<br>$this->apa:'; print_r($this->apa); 
+echo '<br>$this->jumpa:'; print_r($this->jumpa); 
+echo '<br>$this->_jadual:'; print_r($this->_jadual); 
 echo '</pre>';
 //*/
+/*
 # set pembolehubah jika jumpa
 if(isset($this->senarai['data'][0]['id'])):
 	$mencari = URL . 'crud/ubahCari/';
@@ -37,11 +40,14 @@ if ($this->carian=='[tiada id diisi]')
 }
 else
 { # $this->carian=='id' - mula
+	$lepas = array(); # medan yang tak perlu dipaparkan
+	$html = new \Aplikasi\Kitab\Html; 
+
 ?>
 	<form method="POST" action="<?php echo URL ?>kawalan/ubahSimpan/<?php echo $this->cari; ?>"
 	class="form-horizontal">
 	<!-- jadual rangka ########################################### --><?php
-	paparMedanInput($this->senarai);
+	paparMedanInput($this->senarai, $lepas, $html);
 	echo "\n\t\t";
 	if(isset($this->senarai['data'][0]['id1'])):
 	?><div class="form-group">
@@ -56,12 +62,10 @@ else
 <?php 
 endif;
 } // $this->carian=='sidap' - tamat 
+//*/
 
-function paparMedanInput($senarai)
+function paparMedanInput($senarai, $lepas, $html)
 {
-	$lepas = array(); # medan yang tak perlu dipaparkan
-	$html = new \Aplikasi\Kitab\Html; 
-
 	foreach ($senarai as $myTable => $row)
 	{# mula ulang $row
 		for ($kira=0; $kira < count($row); $kira++)
