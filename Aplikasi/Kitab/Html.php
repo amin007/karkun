@@ -359,7 +359,7 @@ class Html
 			
 			foreach ($paparSahaja as $myTable => $bilang)
 			{# mula ulang $bilang
-				$this->papar_jadual($bilang, $myTable, $pilih=2);
+				$this->papar_jadual($bilang, $myTable, $pilih=4);
 			}# tamat ulang $bilang //*/
 			
 			$input = '';
@@ -413,9 +413,7 @@ class Html
 			#-----------------------------------------------------------------
 			?></table><!-- Jadual <?php echo $myTable ?> --><?php
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-		}
-		elseif ($pilih == 2) 
-		{
+		} elseif ($pilih == 2) {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
 			<table  border="1" class="excel" id="example"><?php
@@ -460,9 +458,7 @@ class Html
 			#-----------------------------------------------------------------
 			?></table><!-- Jadual <?php echo $myTable ?> --><?php
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-		}
-		elseif ($pilih == 3) 
-		{
+		} elseif ($pilih == 3) {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?>  --><?php
 			for ($kira=0; $kira < count($row); $kira++)
@@ -479,9 +475,36 @@ class Html
 			}# ulang untuk $kira++ ?>
 			<!-- Jadual <?php echo $myTable ?> --><?php
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-		} # tamat if (jadual ==3
-		elseif ($jadual == 4)
-		{ # mula if (jadual==4
+		} elseif ($pilih == 4) {
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+			?><!-- Jadual <?php echo $myTable ?> -->	
+			<table  border="1" class="table"><?php
+			$printed_headers = false; # mula bina jadual
+			#-----------------------------------------------------------------
+			for ($kira=0; $kira < count($row); $kira++)
+			{	# print the headers once: 	
+				if ( !$printed_headers ) : ?>
+			<thead><tr>
+			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
+			?><th><?php echo $tajuk ?></th>
+			<?php endforeach; ?>  
+			</tr></thead>
+			<?php	$printed_headers = true; 
+				endif;
+			# print the data row--------------------------------------------?>
+			<tbody><tr>
+			<td><?php echo $kira+1 ?></td>	
+			<?php foreach ( $row[$kira] as $key=>$data ) : 
+			?><td><?php echo $data ?></td>
+			<?php endforeach; ?>  
+			</tr></tbody>
+			<?php
+			}
+			#-----------------------------------------------------------------
+			?></table><!-- Jadual <?php echo $myTable ?> --><?php
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+		} elseif ($jadual == 5) { 
+		# nilai akan dipulangkan balik
 			$bil_tajuk = $row['bil_tajuk'];// => 8
 			$bil_baris = $row['bil_baris']; 
 
