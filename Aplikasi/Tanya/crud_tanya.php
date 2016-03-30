@@ -18,12 +18,12 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 	{
 		# ada nilai
 		$hasil = array ( '0' => array (
-				'no'   => '2',
-				'nama'   => 'Fulan Bin Fulan',
+				'no'      => '2',
+				'nama'    => 'Fulan Bin Fulan',
 				'email'   => 'fulan@mail.com',
-				'nohp'   => '0123456789',
-				'jantina'   => 'lelaki',
-				'password'   => '123abd456',
+				'nohp'    => '0123456789',
+				'jantina' => 'lelaki',
+				'password'=> '123abd456',
 				));
 		
 		# tiada nilai
@@ -31,6 +31,32 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		
 		return $hasil;
 	}
+
+	public function tatasusunanUbah2A($jadual, $medan, $cari, $susun) 
+	{
+		# ada nilai
+		$hasil['satu'] = array ( 
+			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
+			);
+		$hasil['dua'] = array ( 
+			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
+			);
+		$hasil['tiga'] = array ( 
+			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
+			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
+			);
+		
+		# tiada nilai
+		$hasil2 = array();
+		
+		return $hasil;
+	}
+	
 	
 	public function medanUbah($cariID) 
 	{ 
