@@ -373,7 +373,7 @@ class Html
 			$input = '<p class="form-control-static text-info">' . $data . '</p>';
 		}
 		
-		echo $input;
+		return $input;
 	}
 	
 	# mula untuk kod php+html 

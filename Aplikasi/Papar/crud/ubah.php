@@ -75,7 +75,7 @@ function paparMedanInput($senarai, $lepas, $html, $jadual)
 			<label for="input<?php echo $key 
 			?>" class="col-sm-2 control-label"><?php echo $key ?></label>
 			<div class="col-sm-6">
-			<?php $html->cariInput(null,$jadual,$kira,$key,$data);
+			<?php echo $html->cariInput(null,$jadual,$kira,$key,$data);
 			echo "\n\t\t\t"; ?></div>
 		</div><?php 
 			endif;
