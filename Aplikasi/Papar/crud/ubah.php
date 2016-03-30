@@ -6,6 +6,7 @@ echo '<br>$this->cariID:'; print_r($this->cariID);
 echo '<br>$this->cariApa:'; print_r($this->cariApa); 
 echo '<br>$this->jumpa:'; print_r($this->jumpa); 
 echo '<br>$this->_jadual:'; print_r($this->_jadual); 
+echo '<br>$this->_paparSahaja:'; print_r($this->_paparSahaja); 
 echo '</pre>';
 //*/
 
@@ -46,7 +47,7 @@ else
 	<form method="POST" action="<?php echo URL ?>kawalan/ubahSimpan/<?php echo $this->jumpa; ?>"
 	class="form-horizontal">
 	<!-- jadual rangka ########################################### --><?php
-	paparMedanInput($this->senarai, $lepas, $html, $this->_jadual);
+	paparMedanInput($this->senarai, $lepas, $html, $this->_jadual, $this->_paparSahaja);
 	echo "\n\t\t";
 	if(isset($this->senarai['data'][0]['id1'])):
 	?><div class="form-group">
@@ -62,7 +63,7 @@ else
 endif;
 } // $this->carian=='sidap' - tamat 
 
-function paparMedanInput($senarai, $lepas, $html, $jadual)
+function paparMedanInput($senarai, $lepas, $html, $jadual, $_paparSahaja)
 {
 	foreach ($senarai as $myTable => $row)
 	{# mula ulang $row
@@ -75,7 +76,7 @@ function paparMedanInput($senarai, $lepas, $html, $jadual)
 			<label for="input<?php echo $key 
 			?>" class="col-sm-2 control-label"><?php echo $key ?></label>
 			<div class="col-sm-6">
-			<?php echo $html->cariInput(null,$jadual,$kira,$key,$data);
+			<?php echo $html->cariInput($_paparSahaja,$jadual,$kira,$key,$data);
 			echo "\n\t\t\t"; ?></div>
 		</div><?php 
 			endif;
