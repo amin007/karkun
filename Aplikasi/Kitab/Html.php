@@ -296,7 +296,7 @@ class Html
 		elseif(in_array($key,array('hasil','belanja','staf','gaji','aset','stok')))
 		{#kod utk input paparkan nilai asal sebelum ubah
 			$input = '<div class="input-group input-group-sm">' . $tabline
-				   . '<span class="input-group-addon">Nilai MKO</span>'		
+				   . '<span class="input-group-addon">Nilai</span>'		
 				   . '<input type="text" ' . $inputText 
 				   . ' class="form-control">' . $tabline
 				   . '<span class="input-group-addon">' . kira($data) . '</span>'
@@ -316,7 +316,7 @@ class Html
 		elseif ( in_array($key,array('lawat','terima','hantar','hantar_prosesan')) )
 		{#kod utk input tarikh
 		#terima - style="font-family:sans-serif;font-size:10px;"
-			$tandaX = 'name="' . $bulan . '[' . $key . 'X]"';
+			$tandaX = 'name="' . $jadual . '[' . $key . 'X]"';
 			$dataX = ($key=='hantar_prosesan') ?
 				'<input type="checkbox" ' . $tandaX . ' value="x">Utk Prosesan : ' . $data
 				: '<input type="checkbox" ' . $tandaX . ' value="x">' . $data;
