@@ -21,7 +21,9 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 				'no'   => '2',
 				'nama'   => 'Fulan Bin Fulan',
 				'email'   => 'fulan@mail.com',
-				'nohp'   => '0123456789' ));
+				'nohp'   => '0123456789',
+				'jantina'   => 'L',
+				));
 		
 		# tiada nilai
 		$hasil2 = array();
