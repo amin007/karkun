@@ -356,10 +356,15 @@ class Html
 		{#kod untuk papar jadual
 			//echo '$paparSahaja-><pre>'; print_r($paparSahaja) . '<pre>';
 			//var_export($paparSahaja) . '<pre>';
-			
+			# set nama class untuk jadual
+			$jadual1 = ' table-striped'; # tambah zebra
+			$jadual2 = ' table-bordered';
+			$jadual3 = ' table-hover';
+			$jadual4 = ' table-condensed'; 
+			$classJadual = 'table' . $jadual4 . $jadual3;
 			foreach ($paparSahaja as $myTable => $bilang)
 			{# mula ulang $bilang
-				$this->papar_jadual($bilang, $myTable, $pilih=4);
+				$this->papar_jadual($bilang, $myTable, $pilih=4, $classJadual);
 			}# tamat ulang $bilang //*/
 			
 			$input = '';
@@ -380,7 +385,7 @@ class Html
 	}
 	
 	# mula untuk kod php+html 
-	function papar_jadual($row, $myTable, $pilih)
+	function papar_jadual($row, $myTable, $pilih, $classTable = null)
 	{
 		if ($pilih == 1) 
 		{
@@ -478,7 +483,8 @@ class Html
 		} elseif ($pilih == 4) {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
-			<table  border="1" class="table"><?php
+			<table class="<?php echo $classTable ?>"><?php
+			?><caption><?php echo $myTable ?></caption><?php
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
