@@ -391,7 +391,7 @@ class Html
 		{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
-			<table  border="1" class="excel" id="example"><?php
+			<table border="1" class="excel" id="example"><?php
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
@@ -419,7 +419,7 @@ class Html
 		} elseif ($pilih == 2) {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
-			<table  border="1" class="excel" id="example"><?php
+			<table border="1" class="excel" id="example"><?php
 			$printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
