@@ -34,7 +34,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$this->papar->baca('crud/papar');
 	}
 	   
-    public function ubah($cariID = null, $medanID = null,$jadualUbah = null) 
+    public function ubah($cariID = null, $medanID = null, $jadualUbah = null) 
     {//echo '<br>Anda berada di class Crud:ubah($cariID) extends \Aplikasi\Kitab\Kawal<br>';
                 
         # senaraikan tatasusunan jadual dan setkan pembolehubah
@@ -51,32 +51,38 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				//cariSql($jadualUbah, $medanUbah, $cari);
 
 			if(isset($this->papar->senarai['data'][0][$medanID])):
-				$jumpaID = $this->papar->senarai['data'][0][$medanID];
+				$this->papar->jumpa = $this->papar->senarai['data'][0][$medanID];
+			else:
+				$this->papar->jumpa = '[tiada jumpa apa2]';
 			endif;
 			
-			$this->papar->carian = $jumpaID;
+			$this->papar->cari = $medanID;
+			$this->papar->apa  = $cariID;
 		}
 		else
 		{
-			$this->papar->carian='[tiada id diisi]';
+			$this->papar->senarai['data'] = array();
+			$this->papar->cari  = '[mahu cari apa]';
+			$this->papar->apa   = '[tiada id diisi]';
+			$this->papar->jumpa = '[hendak cari apa kalau id tiada]';
 		}
 				
 		# isytihar pemboleubah
 		$this->papar->lokasi = 'Enjin - Ubah';
-		$this->papar->jumpa = (isset($this->papar->senarai['data'][0][$medanID])) ? $jumpaID : $cariID;
 		$this->papar->_jadual = $jadualUbah;
 		
         
-		# semak data
+		/*# semak data
 		echo '<pre>';
 		echo '$this->papar->senarai:<br>'; print_r($this->papar->senarai); 
-		echo '<br>$this->papar->jumpa:'; print_r($this->papar->cari); 
-		echo '<br>$this->papar->carian:'; print_r($this->papar->carian); 
+		echo '<br>$this->papar->cari:'; print_r($this->papar->cari); 
+		echo '<br>$this->papar->apa:'; print_r($this->papar->apa); 
+		echo '<br>$this->papar->jumpa:'; print_r($this->papar->jumpa); 
 		echo '<br>$this->papar->_jadual:'; print_r($this->papar->_jadual); 
 		echo '</pre>'; //*/
 		
         # pergi papar kandungan
-        //$this->papar->baca('crud/ubah', 0);
+        $this->papar->baca('crud/ubah', 0);
 
     }
     
