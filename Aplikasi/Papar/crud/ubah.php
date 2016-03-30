@@ -21,9 +21,9 @@ else:
 endif;	
 ?>
 <h1>Ubah Senarai<?=$mesej?></h1>
-<div align="center"><form method="GET" action="<?=$mencari;?>" class="form-inline" autocomplete="off">
+<div align="center"><form method="GET" action="<?=$mencari?>" class="form-inline" autocomplete="off">
 <div class="form-group"><div class="input-group">
-	<input type="text" name="cari" class="form-control" value="<?=$carian;?>" 
+	<input type="text" name="cari" class="form-control" value="<?=$carian?>" 
 	id="inputString" onkeyup="lookup(this.value);" onblur="fill();">
 	<span class="input-group-addon">
 	<input type="submit" value="mencari">
