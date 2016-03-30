@@ -1,5 +1,5 @@
 <?php
-
+/*
 echo '<pre>';
 echo '$this->senarai:<br>'; print_r($this->senarai); 
 echo '<br>$this->cariMedan:'; print_r($this->cariMedan); 
@@ -36,7 +36,7 @@ endif;
 <?php 
 if ($this->cariApa=='[tiada id diisi]')
 {
-    echo 'data kosong<br>';
+    echo 'data kosong<br>' . $this->jumpa;
 }
 else
 { # $this->carian=='id' - mula
