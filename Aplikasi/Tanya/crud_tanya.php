@@ -75,17 +75,17 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		);
 		
 		# ada nilai - pecah tatasusunan kepada beberapa bahagian
-		$hasilx['satu'] = array ( 
+		$hasil1['satu'] = array ( 
 			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
 			);
-		$hasilx['dua'] = array ( 
+		$hasil1['dua'] = array ( 
 			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
 			);
-		$hasilx['tiga'] = array ( 
+		$hasil1['tiga'] = array ( 
 			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'2' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1')
@@ -94,7 +94,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		# tiada nilai
 		$hasil2 = array();
 		
-		return $hasil;
+		return $hasil1;
 	}
 	
 	
