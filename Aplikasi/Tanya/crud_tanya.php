@@ -16,19 +16,17 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 	
 	public function tatasusunanUbah2($jadual, $medan, $cari, $susun) 
 	{
-		return $hasil = array
-		(
-			'data' => array
-			(
-				'0' => array
-				(
-					'no'   => '2',
-					'nama'   => 'Fulan Bin Fulan',
-					'email'   => fulan@mail.com,
-					'nohp'   => 0123456789
-				)
-			)
-		);
+		# ada nilai
+		$hasil = array ( '0' => array (
+				'no'   => '2',
+				'nama'   => 'Fulan Bin Fulan',
+				'email'   => 'fulan@mail.com',
+				'nohp'   => '0123456789' ));
+		
+		# tiada nilai
+		$hasil2 = array();
+		
+		return $hasil;
 	}
 	
 	public function medanUbah($cariID) 
