@@ -340,9 +340,7 @@ class Html
 				   . $input2 . '</select>'
 				   . $tabline2 . '</div>'
 				   . '';
-			
 		}
-
 		# kod html untuk bukan input type		
 		elseif ( in_array($key,array('keterangan')) )
 		{#kod untuk papar jadual
