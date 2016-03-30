@@ -56,15 +56,15 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				$this->papar->jumpa = '[tiada jumpa apa2]';
 			endif;
 			
-			$this->papar->cari = $medanID;
-			$this->papar->apa  = $cariID;
+			$this->papar->cariMedan = $medanID;
+			$this->papar->cariApa   = $cariID;
 		}
 		else
 		{
 			$this->papar->senarai['data'] = array();
-			$this->papar->cari  = '[mahu cari apa]';
-			$this->papar->apa   = '[tiada id diisi]';
-			$this->papar->jumpa = '[hendak cari apa kalau id tiada]';
+			$this->papar->cariMedan = '[mahu cari apa]';
+			$this->papar->cariApa   = '[tiada id diisi]';
+			$this->papar->jumpa     = '[hendak cari apa kalau id tiada]';
 		}
 				
 		# isytihar pemboleubah
@@ -75,8 +75,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		/*# semak data
 		echo '<pre>';
 		echo '$this->papar->senarai:<br>'; print_r($this->papar->senarai); 
-		echo '<br>$this->papar->cari:'; print_r($this->papar->cari); 
-		echo '<br>$this->papar->apa:'; print_r($this->papar->apa); 
+		echo '<br>$this->papar->cariMedan:'; print_r($this->papar->cariMedan); 
+		echo '<br>$this->papar->cariApa:'; print_r($this->papar->cariApa); 
 		echo '<br>$this->papar->jumpa:'; print_r($this->papar->jumpa); 
 		echo '<br>$this->papar->_jadual:'; print_r($this->papar->_jadual); 
 		echo '</pre>'; //*/
