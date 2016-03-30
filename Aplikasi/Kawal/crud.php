@@ -53,8 +53,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			if(isset($this->papar->senarai['data'][0][$medanID])):
 				$this->papar->jumpa = $this->papar->senarai['data'][0][$medanID];
 				# cari data lain jika jumpa
-				$this->papar->cari = $this->tanya->
-					tatasusunanUbah2($jadualUbah, $medanUbah, $cari, $susun = null);
+				$this->papar->_paparSahaja = $this->tanya->
+					tatasusunanUbah2A($jadualUbah, $medanUbah, $cari, $susun = null);
 					//cariSemuaData($jadualUbah, $medanUbah, $cari, $susun = null);
 					//cariSql($jadualUbah, $medanUbah, $cari, $susun = null);
 			else:
