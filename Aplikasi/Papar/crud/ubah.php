@@ -48,8 +48,9 @@ else
 	class="form-horizontal">
 	<!-- jadual rangka ########################################### --><?php
 	paparMedanInput($this->senarai, $lepas, $html, $this->_jadual, $this->_paparSahaja);
-	echo "\n\t\t";
-	if(isset($this->senarai['data'][0]['id1'])):
+	echo "\n\t\t"; //$cariID = 'xxx'; 
+	$cariID = $this->cariID; 
+	if(isset($this->senarai['data'][0][$cariID])):
 	?><div class="form-group">
 			<label for="inputSubmit" class="col-sm-3 control-label"><?=$this->_jadual?></label>
 			<div class="col-sm-6">
@@ -57,8 +58,7 @@ else
 				<input type="submit" name="Simpan" value="Simpan" class="btn btn-primary btn-large">
 			</div>
 		</div>	
-	</form>
-	<hr>
+	</form><hr>
 <?php 
 endif;
 } // $this->carian=='sidap' - tamat 
