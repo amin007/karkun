@@ -35,44 +35,45 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 
 	public function tatasusunanUbah2A($jadual, $medan, $cari, $susun) 
 	{
-		# ada nilai
+		# ada nilai - cantum semua tatasusunan dalam satu
 		$hasil = array (
-		'msic2008' => array (
-			0 => 
-				array (
-					'S' => 'S',
-					'msic2000' => '93099p',
-					'msic' => '96094',
-					'keterangan' => 'Perkhidmatan jagaan haiwan(2)',
-					'notakaki' => '(2) Termasuk: penumpangan, perapian, mendudukkan dan melatih binatang peliharaan',
+			'msic2008' => array (
+				0 => 
+					array (
+						'S' => 'S',
+						'msic2000' => '93099p',
+						'msic' => '96094',
+						'keterangan' => 'Perkhidmatan jagaan haiwan(2)',
+						'notakaki' => '(2) Termasuk: penumpangan, perapian, mendudukkan dan melatih binatang peliharaan',
+					),
 				),
+			'msic_v1' => array (
+				0 => 
+					array (
+						'msic' => '96094',
+						'kp' => '85',
+						'staf' => NULL,
+						'keterangan' => 'Perkhidmatan jagaan haiwan',
+						'notakaki' => 'Pet care services INCLUDE boarding, grooming, sitting and training pets '
+								. 'NOT INCLUDE veterinary activities, see 7500 activities of fitness centres, see 93118',
+					),
 			),
-		'msic_v1' => array (
-			0 => 
-				array (
-					'msic' => '96094',
-					'kp' => '85',
-					'staf' => NULL,
-					'keterangan' => 'Perkhidmatan jagaan haiwan',
-					'notakaki' => 'Pet care services INCLUDE boarding, grooming, sitting and training pets NOT INCLUDE veterinary activities, see 7500 activities of fitness centres, see 93118',
-				),
-		),
-		'msic_bandingan' => array (
-			0 => 
-				array (
-					'sv_newss' => '332',
-					'sv_sidap' => '85',
-					'msic2000p' => '93099p',
-					'msic2000' => '93099',
-					'msic' => '96094',
-					'keterangan' => 'Aktiviti Perkhidmatan Persendirian',
-					'Sektor' => 'Perkhidmatan (Lain-lain)',
-				),
-		),
-		'msic2000' => array (),
-		'msic2000_notakaki' => array (),
+			'msic_bandingan' => array (
+				0 => 
+					array (
+						'sv_newss' => '332',
+						'sv_sidap' => '85',
+						'msic2000p' => '93099p',
+						'msic2000' => '93099',
+						'msic' => '96094',
+						'keterangan' => 'Aktiviti Perkhidmatan Persendirian',
+						'Sektor' => 'Perkhidmatan (Lain-lain)',
+					),
+			),
+			'msic2000' => array (),
+			'msic2000_notakaki' => array (),
 		);
-		
+		# ada nilai - pecah tatasusunan kepada beberapa bahagian
 		$hasilx['satu'] = array ( 
 			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
 			'1' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
