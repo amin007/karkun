@@ -38,6 +38,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
     {//echo '<br>Anda berada di class Crud:ubah($cariID) extends \Aplikasi\Kitab\Kawal<br>';
                 
         # senaraikan tatasusunan jadual dan setkan pembolehubah
+		$this->papar->lokasi = 'Enjin - Ubah';
+		$this->papar->_jadual = $jadualUbah;
 		$medanUbah = $this->tanya->medanUbah2($cariID);
 		//$medanID = ''; $jadualUbah = ''; # 
 	
@@ -71,12 +73,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$this->papar->cariApa = '[tiada id diisi]';
 			$this->papar->jumpa   = '[hendak cari apa kalau id tiada]';
 		}
-				
-		# isytihar pemboleubah
-		$this->papar->lokasi = 'Enjin - Ubah';
-		$this->papar->_jadual = $jadualUbah;
-		
-        
+
 		/*# semak data
 		echo '<pre>';
 		echo '$this->papar->senarai:<br>'; print_r($this->papar->senarai); 
