@@ -7,7 +7,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 	{
 		//echo '<br>class Crud extends Kawal';
 		parent::__construct();
-        \Aplikasi\Kitab\Kebenaran::kawalMasuk();
+		\Aplikasi\Kitab\Kebenaran::kawalMasuk();
 	}
 	
 	function index() 
@@ -109,8 +109,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 
     public function ubahSimpan($dataID)
     {
-        $posmen = array();
-        $medanID = '...';
+    	$posmen = array();
+    	$medanID = '...';
 		$senarai = array('');
     
         foreach ($_POST as $myTable => $value)
