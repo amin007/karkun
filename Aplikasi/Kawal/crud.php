@@ -106,10 +106,12 @@ class Crud extends \Aplikasi\Kitab\Kawal
 
     public function ubahSimpan($dataID)
     {
+		# Set pemboleubah utama
     	$posmen = array();
-    	$medanID = '...';
+    	$medanID = '';
 		$senarai = array('');
     
+		# masuk dalam $posmen, validasi awal
         foreach ($_POST as $myTable => $value)
         {   if ( in_array($myTable,$senarai) )
             {   foreach ($value as $kekunci => $papar)
@@ -121,7 +123,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
             }
         }
         
-		# ubahsuai $posmen
+		# ubahsuai $posmen, valiadi terperinci
 			$jadual = ''; # setkan nama jadual 
 			if (isset($posmen[$jadual]['respon']))
 				$posmen[$jadual]['respon']=strtoupper($posmen[$jadual]['respon']);
@@ -129,6 +131,20 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				$posmen[$jadual]['email']=strtolower($posmen[$jadual]['email']);
 			if (isset($posmen[$jadual]['responden']))
 				$posmen[$jadual]['responden']=mb_convert_case($posmen[$jadual]['responden'], MB_CASE_TITLE);
+			if (isset($posmen[$jadual]['password']))
+			{
+				//$pilih = null;
+				$pilih = 'md5'; # Hash::rahsia('md5', $posmen[$jadual]['password'])
+				//$pilih = 'sha256'; # Hash::create('sha256', $posmen[$jadual]['password'], HASH_PASSWORD_KEY)
+				if (empty($posmen[$jadual]['password']))
+					unset($posmen[$jadual]['password']);
+				elseif ($pilih == 'md5')
+					$posmen[$jadual]['password'] = 
+						\Aplikasi\Kitab\Hash::rahsia('md5', $posmen[$jadual]['password']);
+				elseif ($pilih == 'sha256')
+					$posmen[$jadual]['password'] = 
+						\Aplikasi\Kitab\Hash::create('sha256', $posmen[$jadual]['password'], HASH_PASSWORD_KEY);
+			}
 			if (isset($posmen[$jadual]['hasil']))
 			{
 				eval( '$hasil = (' . $posmen[$jadual]['hasil'] . ');' );
@@ -169,10 +185,12 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				$posmen[$jadual]['tmn_kg']=strtoupper($posmen[$jadual]['tmn_kg']);
 			if (isset($posmen[$jadual]['dp_baru']))
 				$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));//*/
-        //echo '<br>$dataID=' . $dataID . '<br>';
-        //echo '<pre>$_POST='; print_r($_POST) . '</pre>';
-        //echo '<pre>$posmen='; print_r($posmen) . '</pre>';
- 
+			
+			# semak data
+			//echo '<br>$dataID=' . $dataID . '<br>';
+			echo '<pre>$_POST='; print_r($_POST) . '</pre>';
+			echo '<pre>$posmen='; print_r($posmen) . '</pre>';
+ /*
         # mula ulang $senarai
         foreach ($senarai as $kunci => $jadual)
         {// mula ulang table
