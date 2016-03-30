@@ -1,5 +1,5 @@
 <?php
-/*
+
 echo '<pre>';
 echo '$this->senarai:<br>'; print_r($this->senarai); 
 echo '<br>$this->cariMedan:'; print_r($this->cariMedan); 
@@ -12,7 +12,7 @@ echo '</pre>';
 # set pembolehubah jika jumpa
 if(isset($this->senarai['data'][0]['id'])):
 	$mencari = URL . 'crud/ubahCari/';
-	$carian = $this->cariMedan;
+	$carian = $this->cariApa;
 	$mesej = ''; // $this->cariApa .' ada dalam ' . $this->_jadual;
 else: 
 	$mencari = URL . 'crud/ubahCari/';
