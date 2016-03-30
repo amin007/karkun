@@ -1,23 +1,23 @@
 <?php
-
+/*
 echo '<pre>';
 echo '$this->senarai:<br>'; print_r($this->senarai); 
-echo '<br>$this->cari:'; print_r($this->cari); 
-echo '<br>$this->apa:'; print_r($this->apa); 
+echo '<br>$this->cariMedan:'; print_r($this->cariMedan); 
+echo '<br>$this->cariApa:'; print_r($this->cariApa); 
 echo '<br>$this->jumpa:'; print_r($this->jumpa); 
 echo '<br>$this->_jadual:'; print_r($this->_jadual); 
 echo '</pre>';
 //*/
-/*
+
 # set pembolehubah jika jumpa
 if(isset($this->senarai['data'][0]['id'])):
 	$mencari = URL . 'crud/ubahCari/';
-	$carian = $this->cari;
+	$carian = $this->cariMedan;
 	$mesej = ''; // $carian .' ada dalam ' . $this->_jadual;
 else: 
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = null;
-	$mesej = '::' . $this->cari .' tiada dalam ' . $this->_jadual;
+	$mesej = '::' . $this->cariMedan .' tidak jumpa di ' . $this->_jadual;
 endif;	
 ?>
 <h1>Ubah Senarai<?=$mesej?></h1>
@@ -34,7 +34,7 @@ endif;
 </div>
 </form></div><br>
 <?php 
-if ($this->carian=='[tiada id diisi]')
+if ($this->cariApa=='[tiada id diisi]')
 {
     echo 'data kosong<br>';
 }
