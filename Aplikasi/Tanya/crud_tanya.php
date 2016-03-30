@@ -11,6 +11,8 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 	public function medanUbah2($cariID)
 	{
 		$senaraiMedan = 'no,Nama_Penuh nama,email,nohp';
+		
+		# pulangkan pemboleubah
 		return $senaraiMedan;
 	}
 	
@@ -30,6 +32,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		# tiada nilai
 		$hasil2 = array();
 		
+		# pulangkan pemboleubah
 		return $hasil;
 	}
 
@@ -91,6 +94,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		# tiada nilai
 		$hasil2 = array();
 		
+		# pulangkan pemboleubah
 		return $hasil1;
 	}
 	
@@ -124,7 +128,9 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 			//. 'concat_ws(" ",no,batu,( if (jalan is null, "", concat("JALAN ",jalan) ) ),tmn_kg,poskod,dp_baru) alamat_baru,' . "\r"
 			. 'tel,notel,fax,nofax,responden,orang,email,esurat,'
 			. 'hasil,belanja,gaji,aset,staf,stok' . "\r" 
-			. '';	
+			. '';
+		
+		# pulangkan pemboleubah
 		return $senaraiMedan;
 	}	
 #==========================================================================================
