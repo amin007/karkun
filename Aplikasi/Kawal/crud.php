@@ -118,15 +118,14 @@ class Crud extends \Aplikasi\Kitab\Kawal
             {   foreach ($value as $kekunci => $papar)
 				{	$posmen[$myTable][$kekunci]= 
 						( in_array($kekunci,array('hasil','belanja','gaji','aset','staf','stok')) ) ?
-						str_replace( ',', '', bersih($papar) )// buang koma	
+						str_replace( ',', '', bersih($papar) ) # buang koma	
 						: bersih($papar);
 				}	$posmen[$myTable][$medanID] = $dataID;
             }
         }
         
 		# ubahsuai $posmen
-			# buat peristiharan
-			$jadual = ''; // jadual 
+			$jadual = ''; # setkan nama jadual 
 			if (isset($posmen[$jadual]['respon']))
 				$posmen[$jadual]['respon']=strtoupper($posmen[$jadual]['respon']);
 			if (isset($posmen[$jadual]['email']))
