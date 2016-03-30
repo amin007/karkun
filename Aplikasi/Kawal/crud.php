@@ -48,7 +48,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$this->papar->senarai['data'] = $this->tanya->
 				tatasusunanUbah2($jadualUbah, $medanUbah, $cari, $susun = null);
 				//cariSemuaData($jadualUbah, $medanUbah, $cari, $susun = null);
-				//cariSql($jadualUbah, $medanUbah, $cari);
+				//cariSql($jadualUbah, $medanUbah, $cari, $susun = null);
 
 			if(isset($this->papar->senarai['data'][0][$medanID])):
 				$this->papar->jumpa = $this->papar->senarai['data'][0][$medanID];
