@@ -480,34 +480,31 @@ class Html
 			}# ulang untuk $kira++ ?>
 			<!-- Jadual <?php echo $myTable ?> --><?php
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-		} elseif ($pilih == 4) {
+		} elseif ($pilih == 4) { 
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
-			<table class="<?php echo $classTable ?>"><?php
-			?><caption><?php echo $myTable ?></caption><?php
-			$printed_headers = false; # mula bina jadual
+			<table class="<?php echo $classTable ?>">
+			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
 			{	# print the headers once: 	
-				if ( !$printed_headers ) : ?>
-			<thead><tr>
+				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
-			?><th><?php echo $tajuk ?></th>
-			<?php endforeach; ?>  
-			</tr></thead>
+			?><th><?php echo $tajuk ?></th><?php endforeach; 
+			?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			# print the data row--------------------------------------------?>
-			<tbody><tr>
-			<td><?php echo $kira+1 ?></td>	
-			<?php foreach ( $row[$kira] as $key=>$data ) : 
-			?><td><?php echo $data ?></td>
-			<?php endforeach; ?>  
+			# print the data row--------------------------------------------
+			?><tbody><tr>
+			<td><?php echo $kira+1 ?></td><?php 
+				foreach ( $row[$kira] as $key=>$data ) : 
+			?><td><?php echo $data ?></td><?php 
+				endforeach; ?>  
 			</tr></tbody>
 			<?php
 			}
 			#-----------------------------------------------------------------
-			?></table><!-- Jadual <?php echo $myTable ?> --><?php
+			?></table><?php echo "\r\t\t\t"; ?><!-- Jadual <?php echo $myTable ?> --><?php echo "\r\t\t\t";
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 		} elseif ($jadual == 5) { 
 		# nilai akan dipulangkan balik
