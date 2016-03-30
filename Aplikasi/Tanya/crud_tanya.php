@@ -22,9 +22,9 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 				      'nama' => 'Fulan Bin Fulan',
 				     'email' => 'fulan@mail.com',
 				      'nohp' => '0123456789',
+				'keterangan' => '',					  
 				   'jantina' => 'lelaki',
 				  'password' => '123abd456',
-				'keterangan' => '',
 				));
 		
 		# tiada nilai
