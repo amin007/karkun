@@ -45,11 +45,10 @@ spl_autoload_register(function ($namaClass)
 	if (file_exists($file)) require $file;
 });
 /* 5. istihar class 
-* After registering this autoload function with SPL, the following line
+ * After registering this autoload function with SPL, the following line
  * would cause the function to attempt to load the \Foo\Bar\Baz\Qux class
  * from /path/to/project/src/Baz/Qux.php:
  * 
  *      new \Foo\Bar\Baz\Qux;
  */
-//new \Foo\Bar\Mulakan;
 $aplikasi = new \Aplikasi\Kitab\Route();
