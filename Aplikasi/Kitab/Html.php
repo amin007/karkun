@@ -252,7 +252,7 @@ class Html
 			return $papar;
 	}
 	
-	public function cariInput($cariKhas,$jadual,$kira,$key,$data)
+	public function cariInput($paparSahaja,$jadual,$kira,$key,$data)
 	{	# istihar pembolehubah 
 		$name = 'name="' . $jadual . '[' . $key . ']"';
 		$inputText = $name . ' value="' . $data . '"';
@@ -354,12 +354,15 @@ class Html
 		# kod html untuk bukan input type		
 		elseif ( in_array($key,array('keterangan')) )
 		{#kod untuk papar jadual
-			foreach ($cariKhas as $myTable => $bilang)
-			{// mula ulang $bilang
-				$this->papar_jadual($bilang, $myTable, $pilih=2);
-			}// tamat ulang $bilang
+			//echo '$paparSahaja-><pre>'; print_r($paparSahaja) . '<pre>';
+			//var_export($paparSahaja) . '<pre>';
 			
-			$input = null;
+			foreach ($paparSahaja as $myTable => $bilang)
+			{# mula ulang $bilang
+				$this->papar_jadual($bilang, $myTable, $pilih=2);
+			}# tamat ulang $bilang //*/
+			
+			$input = '';
 		}
 		elseif ( in_array($key,array('alamat_baru')) )
 		{#kod untuk  blockquote
