@@ -2,7 +2,7 @@
 /*
 echo '<pre>';
 echo '$this->senarai:<br>'; print_r($this->senarai); 
-echo '<br>$this->cariMedan:'; print_r($this->cariMedan); 
+echo '<br>$this->cariID:'; print_r($this->cariID); 
 echo '<br>$this->cariApa:'; print_r($this->cariApa); 
 echo '<br>$this->jumpa:'; print_r($this->jumpa); 
 echo '<br>$this->_jadual:'; print_r($this->_jadual); 
@@ -10,14 +10,14 @@ echo '</pre>';
 //*/
 
 # set pembolehubah jika jumpa
-if(isset($this->senarai['data'][0][$this->cariMedan])):
+if(isset($this->senarai['data'][0][$this->cariID])):
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = $this->cariApa;
 	$mesej = ''; // $this->cariApa .' ada dalam ' . $this->_jadual;
 else: 
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = null;
-	$mesej = '::' . $this->cariMedan .' tidak jumpa di ' . $this->_jadual;
+	$mesej = '::' . $this->cariID .' tidak jumpa di ' . $this->_jadual;
 endif;	
 ?>
 <h1>Ubah Senarai<?=$mesej?></h1>
