@@ -10,7 +10,7 @@ echo '</pre>';
 //*/
 
 # set pembolehubah jika jumpa
-if(isset($this->senarai['data'][0]['id'])):
+if(isset($this->senarai['data'][0][$this->cariMedan])):
 	$mencari = URL . 'crud/ubahCari/';
 	$carian = $this->cariApa;
 	$mesej = ''; // $this->cariApa .' ada dalam ' . $this->_jadual;
