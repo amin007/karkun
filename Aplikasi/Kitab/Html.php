@@ -319,6 +319,30 @@ class Html
 				   . $tabline2 . '</div>'
 				   . '';			   
 		}
+		elseif ( in_array($key,array('jantina')) )
+		{
+			# set pembolehubah
+			$input2 = null;
+			$senaraiJantina = array('lelaki','perempuan');
+			
+			foreach ($senaraiJantina as $key => $value)
+			{
+				$input2 .= '<option value="' . $value . '"';
+				$input2 .= ($value == $data) ? ' selected>*' : '>';
+				$input2 .= ucfirst(strtolower($value));
+				$input2 .= '</option>' . $tabline;
+			}
+
+			# cantumkan dalam input
+			$input = '<div class="input-group input-group-sm">' . $tabline
+				   . '<span class="input-group-addon">' . $data . '</span>' . $tabline
+				   . '<select ' . $name . ' class="form-control">' . $tabline
+				   . $input2 . '</select>'
+				   . $tabline2 . '</div>'
+				   . '';
+			
+		}
+
 		# kod html untuk bukan input type		
 		elseif ( in_array($key,array('keterangan')) )
 		{#kod untuk papar jadual
