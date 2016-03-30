@@ -73,6 +73,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 			'msic2000' => array (),
 			'msic2000_notakaki' => array (),
 		);
+		
 		# ada nilai - pecah tatasusunan kepada beberapa bahagian
 		$hasilx['satu'] = array ( 
 			'0' => array ('kira' => '1', 'A' => 'A1', 'B' => 'B1'),
