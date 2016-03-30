@@ -38,8 +38,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		# ada nilai - cantum semua tatasusunan dalam satu
 		$hasil = array (
 			'msic2008' => array (
-				0 => 
-					array (
+				0 => array (
 						'S' => 'S',
 						'msic2000' => '93099p',
 						'msic' => '96094',
@@ -48,8 +47,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 					),
 				),
 			'msic_v1' => array (
-				0 => 
-					array (
+				0 => array (
 						'msic' => '96094',
 						'kp' => '85',
 						'staf' => NULL,
@@ -59,8 +57,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 					),
 			),
 			'msic_bandingan' => array (
-				0 => 
-					array (
+				0 => array (
 						'sv_newss' => '332',
 						'sv_sidap' => '85',
 						'msic2000p' => '93099p',
