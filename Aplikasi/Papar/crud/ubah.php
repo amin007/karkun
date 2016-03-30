@@ -42,7 +42,6 @@ else
 { # $this->carian=='id' - mula
 	$lepas = array(); # medan yang tak perlu dipaparkan
 	$html = new \Aplikasi\Kitab\Html; 
-
 ?>
 	<form method="POST" action="<?php echo URL ?>kawalan/ubahSimpan/<?php echo $this->cari; ?>"
 	class="form-horizontal">
@@ -62,7 +61,6 @@ else
 <?php 
 endif;
 } // $this->carian=='sidap' - tamat 
-//*/
 
 function paparMedanInput($senarai, $lepas, $html, $jadual)
 {
