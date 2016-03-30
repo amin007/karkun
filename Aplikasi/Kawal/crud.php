@@ -46,7 +46,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$cari[] = array('fix'=>'like','atau'=>'WHERE','medan'=>$medanID,'apa'=>$cariID);
 			# 1. mula semak dalam jadual
 			$this->papar->senarai['data'] = $this->tanya->
-				cariSemuaData($jadualUbah, $medanUbah, $cari, $susun = null);
+				tatasusunanUbah2($jadualUbah, $medanUbah, $cari, $susun = null);
+				//cariSemuaData($jadualUbah, $medanUbah, $cari, $susun = null);
 				//cariSql($jadualUbah, $medanUbah, $cari);
 
 			if(isset($this->papar->senarai['data'][0][$medanID])):
@@ -62,18 +63,20 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				
 		# isytihar pemboleubah
 		$this->papar->lokasi = 'Enjin - Ubah';
-		$this->papar->cari = (isset($this->papar->senarai['data'][0][$medanID])) ? $jumpaID : $cariID;
+		$this->papar->jumpa = (isset($this->papar->senarai['data'][0][$medanID])) ? $jumpaID : $cariID;
 		$this->papar->_jadual = $jadualUbah;
 		
         
-		/*# semak data
+		# semak data
 		echo '<pre>';
 		echo '$this->papar->senarai:<br>'; print_r($this->papar->senarai); 
-		echo '$this->papar->cari:<br>'; print_r($this->papar->cari); 
+		echo '<br>$this->papar->jumpa:'; print_r($this->papar->cari); 
+		echo '<br>$this->papar->carian:'; print_r($this->papar->carian); 
+		echo '<br>$this->papar->_jadual:'; print_r($this->papar->_jadual); 
 		echo '</pre>'; //*/
 		
         # pergi papar kandungan
-        $this->papar->baca('crud/ubah', 0);
+        //$this->papar->baca('crud/ubah', 0);
 
     }
     
