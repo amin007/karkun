@@ -208,16 +208,18 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			//echo '<br>$dataID=' . $dataID . '<br>';
 			echo '<pre>$_POST='; print_r($_POST) . '</pre>';
 			echo '<pre>$posmen='; print_r($posmen) . '</pre>';
- /*
-        # mula ulang $senarai
-        foreach ($senarai as $kunci => $jadual)
-        {// mula ulang table
-            $this->tanya->ubahSimpan($posmen[$jadual], $jadual, $medanID);
-        }// tamat ulang table
+ 
+		# mula ulang $senarai
+		foreach ($senarai as $kunci => $jadual)
+		{# tanya sql sama ada papar atau simpan
+			$this->tanya->ubahSqlSimpan
+			//ubahSimpan
+			($posmen[$jadual], $jadual, $medanID);
+		}# tamat ulang $senarai
         
         # pergi papar kandungan
 		//$this->papar->baca($this->_folder . '/ubah/' . $dataID);
-		header('location: ' . URL . $this->_folder . '/ubah/' . $dataID);
+		//header('location: ' . URL . $this->_folder . '/ubah/' . $dataID);
  //*/       
     }
 

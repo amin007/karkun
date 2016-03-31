@@ -187,5 +187,58 @@ class Tanya
 		//$this->db->insert($sql);	header('location:' . URL . 'test/paparfail');
 	}
 	
+	public function ubahSimpan($data, $myTable, $medanID)
+	{
+		$senarai = null; //echo '<pre>$data->', print_r($data, 1) . '</pre>';
+		
+		foreach ($data as $medan => $nilai)
+		{
+			if ($medan == $medanID)
+				$cariID = $medan;
+			elseif ($medan != $medanID)
+				$senarai[] = ($nilai==null) ? " `$medan`=null" : " `$medan`='$nilai'"; 
+		}
+		
+		$senaraiData = implode(",\r",$senarai);
+		$where = "`$cariID` = '{$data[$cariID]}' ";
+		
+		# set sql
+		$sql = " UPDATE `$myTable` SET \r$senaraiData\r WHERE $where";
+		//echo '<pre>$sql->', print_r($sql, 1) . '</pre>';
+		$this->db->update($sql);
+	}
+
+	public function ubahSqlSimpan($data, $myTable, $medanID)
+	{
+		$senarai = null; //echo '<pre>$data->', print_r($data, 1) . '</pre>';
+		
+		foreach ($data as $medan => $nilai)
+		{
+			if ($medan == $medanID)
+				$cariID = $medan;
+			elseif ($medan != $medanID)
+				$senarai[] = ($nilai==null) ? " `$medan`=null" : " `$medan`='$nilai'"; 
+		}
+		
+		$senaraiData = implode(",\r",$senarai);
+		$where = "`$cariID` = '{$data[$cariID]}' ";
+		
+		# set sql
+		$sql = " UPDATE `$myTable` SET \r$senaraiData\r WHERE $where";
+		echo '<pre>$sql->', print_r($sql, 1) . '</pre>';
+	}
+	
+	/*public function buangTerus($data, $myTable)
+	{
+		//echo '<pre>$sql->', print_r($data, 1) . '</pre>';
+		$cariID = 'newss';
+				
+		// set sql
+		//$sql = " DELETE `$myTable` WHERE `$cariID` = '{$data[$cariID]}' ";
+		//echo '<pre>$sql->', print_r($sql, 1) . '</pre>';
+		$this->db->delete($myTable, "`$cariID` = '{$data[$cariID]}' ");
+			
+	}//*/
+	
 #==========================================================================================
 }
