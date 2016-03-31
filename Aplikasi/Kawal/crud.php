@@ -151,6 +151,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
     {
 		# Set pemboleubah utama
     	$posmen = array();
+		$nilaiRM = array('hasil','belanja','gaji','aset','staf','stok');
     	$medanID = '';
 		$senarai = array('');
     
@@ -159,7 +160,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
         {   if ( in_array($myTable,$senarai) )
             {   foreach ($value as $kekunci => $papar)
 				{	$posmen[$myTable][$kekunci]= 
-						( in_array($kekunci,array('hasil','belanja','gaji','aset','staf','stok')) ) ?
+						( in_array($kekunci,$nilaiRM) ) ? # $nilaiRM rujuk line 154
 						str_replace( ',', '', bersih($papar) ) # buang koma	
 						: bersih($papar);
 				}	$posmen[$myTable][$medanID] = $dataID;
@@ -169,8 +170,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# ubahsuai $posmen, valiadi terperinci
 			$jadual = ''; # setkan nama jadual 
 			# valid guna gelung foreach
-			$nilaiRM = array('hasil','belanja','gaji','aset','staf','stok');
-			foreach ($nilaiRM as $keyRM)
+			foreach ($nilaiRM as $keyRM) # $nilaiRM rujuk line 154
 			{# kod php untuk formula matematik
 				if(isset($posmen[$jadual][$keyRM])):
 					eval( '$data = (' . $posmen[$jadual][$keyRM] . ');' );
