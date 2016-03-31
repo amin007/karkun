@@ -188,37 +188,26 @@ class Crud extends \Aplikasi\Kitab\Kawal
 					$posmen[$jadual]['password'] = 
 						\Aplikasi\Kitab\Hash::create('sha256', $posmen[$jadual]['password'], HASH_PASSWORD_KEY);
 			}
-			if (isset($posmen[$jadual]['hasil']))
+			if (isset($posmen[$jadual]['hasil'])
+				|| isset($posmen[$jadual]['belanja'])
+				|| isset($posmen[$jadual]['gaji'])
+				|| isset($posmen[$jadual]['aset'])
+				|| isset($posmen[$jadual]['staf'])
+				|| isset($posmen[$jadual]['stok'])	)
 			{
 				eval( '$hasil = (' . $posmen[$jadual]['hasil'] . ');' );
 				$posmen[$jadual]['hasil'] = $hasil;
-			}
-			if (isset($posmen[$jadual]['belanja']))			
-			{
 				eval( '$belanja = (' . $posmen[$jadual]['belanja'] . ');' );
 				$posmen[$jadual]['belanja'] = $belanja;
-			}
-			if (isset($posmen[$jadual]['gaji']))
-			{
 				eval( '$gaji = (' . $posmen[$jadual]['gaji'] . ');' );
 				$posmen[$jadual]['gaji'] = $gaji;
-			}
-			if (isset($posmen[$jadual]['aset']))			
-			{
 				eval( '$aset = (' . $posmen[$jadual]['aset'] . ');' );
 				$posmen[$jadual]['aset'] = $aset;
-			}
-			if (isset($posmen[$jadual]['staf']))
-			{
 				eval( '$staf = (' . $posmen[$jadual]['staf'] . ');' );
 				$posmen[$jadual]['staf'] = $staf;
-			}
-			if (isset($posmen[$jadual]['stok']))			
-			{
 				eval( '$stok = (' . $posmen[$jadual]['stok'] . ');' );
 				$posmen[$jadual]['stok'] = $stok;
-			}
-			/*if (isset($posmen[$jadual]['no']))
+			}			/*if (isset($posmen[$jadual]['no']))
 				$posmen[$jadual]['no']=strtoupper($posmen[$jadual]['no']);
 			if (isset($posmen[$jadual]['batu']))
 				$posmen[$jadual]['batu']=strtoupper($posmen[$jadual]['batu']);
