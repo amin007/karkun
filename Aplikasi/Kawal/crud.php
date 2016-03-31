@@ -168,6 +168,21 @@ class Crud extends \Aplikasi\Kitab\Kawal
         
 		# ubahsuai $posmen, valiadi terperinci
 			$jadual = ''; # setkan nama jadual 
+			# valid guna gelung foreach
+			$nilaiRM = array('hasil','belanja','gaji','aset','staf','stok');
+			foreach ($nilaiRM as $keyRM)
+			{# kod php untuk formula matematik
+				if(isset($posmen[$jadual][$keyRM])):
+					eval( '$data = (' . $posmen[$jadual][$keyRM] . ');' );
+					$posmen[$jadual][$keyRM] = $data;
+				endif;
+			}/*$nilaiTEKS = array('no','batu','jalan','tmn_kg');
+			foreach ($nilaiTEKS as $keyTEKS)
+			{# kod php untuk besarkan semua huruf aka uppercase
+				if(isset($posmen[$jadual][$keyTEKS])):
+					$posmen[$jadual][$keyTEKS] = strtoupper($posmen[$jadual][$keyTEKS]);
+				endif;
+			}//*/ # valid guna if
 			if (isset($posmen[$jadual]['respon']))
 				$posmen[$jadual]['respon']=strtoupper($posmen[$jadual]['respon']);
 			if (isset($posmen[$jadual]['email']))
@@ -188,36 +203,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 					$posmen[$jadual]['password'] = 
 						\Aplikasi\Kitab\Hash::create('sha256', $posmen[$jadual]['password'], HASH_PASSWORD_KEY);
 			}
-			if (isset($posmen[$jadual]['hasil'])
-				|| isset($posmen[$jadual]['belanja'])
-				|| isset($posmen[$jadual]['gaji'])
-				|| isset($posmen[$jadual]['aset'])
-				|| isset($posmen[$jadual]['staf'])
-				|| isset($posmen[$jadual]['stok'])	)
-			{
-				eval( '$hasil = (' . $posmen[$jadual]['hasil'] . ');' );
-				$posmen[$jadual]['hasil'] = $hasil;
-				eval( '$belanja = (' . $posmen[$jadual]['belanja'] . ');' );
-				$posmen[$jadual]['belanja'] = $belanja;
-				eval( '$gaji = (' . $posmen[$jadual]['gaji'] . ');' );
-				$posmen[$jadual]['gaji'] = $gaji;
-				eval( '$aset = (' . $posmen[$jadual]['aset'] . ');' );
-				$posmen[$jadual]['aset'] = $aset;
-				eval( '$staf = (' . $posmen[$jadual]['staf'] . ');' );
-				$posmen[$jadual]['staf'] = $staf;
-				eval( '$stok = (' . $posmen[$jadual]['stok'] . ');' );
-				$posmen[$jadual]['stok'] = $stok;
-			}
-			/*if (isset($posmen[$jadual]['no']))
-				$posmen[$jadual]['no']=strtoupper($posmen[$jadual]['no']);
-			if (isset($posmen[$jadual]['batu']))
-				$posmen[$jadual]['batu']=strtoupper($posmen[$jadual]['batu']);
-			if (isset($posmen[$jadual]['jalan']))
-				$posmen[$jadual]['jalan']=strtoupper($posmen[$jadual]['jalan']);
-			if (isset($posmen[$jadual]['tmn_kg']))
-				$posmen[$jadual]['tmn_kg']=strtoupper($posmen[$jadual]['tmn_kg']);
-			if (isset($posmen[$jadual]['dp_baru']))
-				$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));//*/
+			//if (isset($posmen[$jadual]['dp_baru']))
+			//	$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));
 			
 			# semak data
 			//echo '<br>$dataID=' . $dataID . '<br>';
