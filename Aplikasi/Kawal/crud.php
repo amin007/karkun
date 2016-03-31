@@ -37,7 +37,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$carian[] = array('fix'=>'x=','atau'=>'WHERE','medan'=>$cariID,'apa'=>$cariApa);
 			#foreach ($senaraiJadual as $key => $myTable)
 			#{# mula ulang table
-				# dapatkan bilangan jumlah rekod
+				/*# dapatkan bilangan jumlah rekod
 				$bilSemua = $this->tanya->tatasusunanP
 					//cariSemuaData //cariSql //kiraKes
 					($myTable, $medan, $carian);
@@ -45,14 +45,21 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				//echo '$bilSemua:' . $bilSemua . ', $item:' . $item . ', $ms:' . $ms . '<br>';
 				$jum = pencamSqlLimit($bilSemua, $item, $ms);
 				$susun[] = array_merge($jum, array('kumpul'=>null,'susun'=>null) );
-				$this->papar->bilSemua[$myTable] = $bilSemua;
-				# sql guna limit //$this->papar->cariApa = array();
-				$this->papar->cariApa['data'] = $this->tanya->tatasusunanUbah2A
+				$this->papar->bilSemua[$myTable] = $bilSemua;//*/
+				# sql guna limit //$this->papar->senaraiApa = array();
+				$this->papar->senaraiApa['data'] = $this->tanya->tatasusunanUbah2A
 					//cariSemuaData //cariSql
 					($myTable, $medan, $carian, $susun);
 				# halaman
 				$this->papar->halaman[$myTable] = halaman($jum);
 			#}# tamat ulang table
+
+		# semak data
+		echo '<pre>';
+		//echo '<br>$this->papar->cariID:'; print_r($this->papar->cariID); 
+		//echo '<br>$this->papar->cariApa:'; print_r($this->papar->cariApa); 
+		echo '$this->papar->senaraiApa:<br>'; print_r($this->papar->senaraiApa);
+ 		echo '</pre>'; //*/
 		
 		# pergi papar kandungan
 		$this->papar->baca($this->_folder . '/papar');
@@ -65,7 +72,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$item = 1000; $ms = 1;
 		# kod asas panggil sql
 			$medan = '*'; # papar semua medan
-			$carian[] = array('fix'=>'x=','atau'=>'WHERE','medan'=>$cariID,'apa'=>$cariApa);
+			$jadual = '{jadual}';
+			$cari[] = array('fix'=>'x=','atau'=>'WHERE','medan'=>$cariID,'apa'=>$cariApa);
 			$jum2 = pencamSqlLimit(300, $item, $ms); #
 			$susun[] = array_merge($jum2, array('kumpul'=>null,'susun'=>null) );
 			# tanya Sql
@@ -74,7 +82,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				($jadual, $medan, $cari, $susun = null);
 		
 		# pergi papar kandungan
-		$this->papar->baca($this->_folder . '/papar');
+		//$this->papar->baca($this->_folder . '/papar');
 	}
 	   
     public function ubah($cariID = null, $medanID = null, $jadualUbah = null) 
