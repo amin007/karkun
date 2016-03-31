@@ -207,7 +207,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				$posmen[$jadual]['staf'] = $staf;
 				eval( '$stok = (' . $posmen[$jadual]['stok'] . ');' );
 				$posmen[$jadual]['stok'] = $stok;
-			}			/*if (isset($posmen[$jadual]['no']))
+			}
+			/*if (isset($posmen[$jadual]['no']))
 				$posmen[$jadual]['no']=strtoupper($posmen[$jadual]['no']);
 			if (isset($posmen[$jadual]['batu']))
 				$posmen[$jadual]['batu']=strtoupper($posmen[$jadual]['batu']);
