@@ -102,7 +102,7 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 		$hasil2 = array();
 		
 		# pulangkan pemboleubah
-		return $hasil1;
+		return $hasil;
 	}
 	
 	

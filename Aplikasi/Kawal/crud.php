@@ -47,7 +47,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				$susun[] = array_merge($jum, array('kumpul'=>null,'susun'=>null) );
 				$this->papar->bilSemua[$myTable] = $bilSemua;
 				# sql guna limit //$this->papar->cariApa = array();
-				$this->papar->cariApa['data'] = $this->tanya->tatasusunanP
+				$this->papar->cariApa['data'] = $this->tanya->tatasusunanUbah2A
 					//cariSemuaData //cariSql
 					($myTable, $medan, $carian, $susun);
 				# halaman
@@ -69,7 +69,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$jum2 = pencamSqlLimit(300, $item, $ms); #
 			$susun[] = array_merge($jum2, array('kumpul'=>null,'susun'=>null) );
 			# tanya Sql
-			$this->papar->cariApa['data'] = $this->tanya->tatasusunanP
+			$this->papar->cariApa['data'] = $this->tanya->tatasusunanUbah2A
 				//cariSemuaData //cariSql
 				($jadual, $medan, $cari, $susun = null);
 		
