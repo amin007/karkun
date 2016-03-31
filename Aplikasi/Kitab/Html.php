@@ -391,26 +391,23 @@ class Html
 		{
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 			?><!-- Jadual <?php echo $myTable ?> -->	
-			<table border="1" class="excel" id="example"><?php
-			$printed_headers = false; # mula bina jadual
+			<table border="1" class="excel" id="example">
+			<?php $printed_headers = false; # mula bina jadual
 			#-----------------------------------------------------------------
 			for ($kira=0; $kira < count($row); $kira++)
 			{	# print the headers once: 	
-				if ( !$printed_headers ) : ?>
-			<thead><tr>
+				if ( !$printed_headers ) : ?><thead><tr>
 			<th>#</th><?php foreach ( array_keys($row[$kira]) as $tajuk ) :
 			?><th><?php echo $tajuk ?></th>
-			<?php endforeach; ?>  
-			</tr></thead>
+			<?php endforeach; ?></tr></thead>
 			<?php	$printed_headers = true; 
 				endif;
-			#- print the data row --------------------------------------------?>
-			<tbody><tr>
+			#- print the data row --------------------------------------------
+			?><tbody><tr>
 			<td><?php echo $kira+1 ?></td>	
 			<?php foreach ( $row[$kira] as $key=>$data ) : 
 			?><td><?php echo $data ?></td>
-			<?php endforeach; ?>  
-			</tr></tbody>
+			<?php endforeach; ?></tr></tbody>
 			<?php
 			}
 			#-----------------------------------------------------------------
