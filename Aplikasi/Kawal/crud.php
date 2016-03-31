@@ -27,7 +27,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$this->papar->baca($this->_folder . '/tambah');
 	}
 	
-	function paparXLimit($cariID = null, $cariApa = null) 
+	public function paparxlimit($cariID = null, $cariApa = null) 
 	{
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
@@ -58,7 +58,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$this->papar->baca($this->_folder . '/papar');
 	}
 
-	function paparSetLimit($cariID = null, $cariApa = null) 
+	public function paparlimit($cariID = null, $cariApa = null) 
 	{
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
