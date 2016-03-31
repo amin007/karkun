@@ -77,9 +77,16 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			$jum2 = pencamSqlLimit(300, $item, $ms); #
 			$susun[] = array_merge($jum2, array('kumpul'=>null,'susun'=>null) );
 			# tanya Sql
-			$this->papar->cariApa['data'] = $this->tanya->tatasusunanUbah2A
+			$this->papar->senaraiApa['data'] = $this->tanya->tatasusunanUbah2A
 				//cariSemuaData //cariSql
 				($jadual, $medan, $cari, $susun = null);
+
+		# semak data
+		echo '<pre>';
+		//echo '<br>$this->papar->cariID:'; print_r($this->papar->cariID); 
+		//echo '<br>$this->papar->cariApa:'; print_r($this->papar->cariApa); 
+		echo '$this->papar->senaraiApa:<br>'; print_r($this->papar->senaraiApa);
+ 		echo '</pre>'; //*/
 		
 		# pergi papar kandungan
 		//$this->papar->baca($this->_folder . '/papar');
