@@ -86,7 +86,6 @@ class Tanya
 
 	private function dibawah($carian)
 	{
-		
 		$susunan = null;
 		if($carian==null || empty($carian) ):
 			$susunan .= null;
@@ -98,14 +97,13 @@ class Tanya
 				  $order = isset($carian[$key]['susun'])  ? $carian[$key]['susun']   : null;
 				   $dari = isset($carian[$key]['dari'])   ? $carian[$key]['dari']    : null;			
 				    $max = isset($carian[$key]['max'])    ? $carian[$key]['max']     : null;
-				
 				//echo "\$cari = $cari, \$key=$key <br>";
 			}
-				if ($kumpul!=null)$susunan .= " GROUP BY $kumpul\r";
+				if ($kumpul!=null) $susunan .= " GROUP BY $kumpul\r";
 				if ($mengira!=null)$susunan .= " $mengira\r";
-				if ($order!=null) $susunan .= " ORDER BY $order\r";
-				if ($max!=null)   $susunan .= ($dari==0) ? 
-						" LIMIT $max\r" : " LIMIT $dari,$max\r";
+				if ($order!=null)  $susunan .= " ORDER BY $order\r";
+				if ($max!=null)    $susunan .= ($dari==0) ? 
+					" LIMIT $max\r" : " LIMIT $dari,$max\r";
 		endif; 
 	
 		return $susunan; //echo '<pre>'; print_r($carian).  '<pre>';
