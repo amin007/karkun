@@ -205,15 +205,13 @@ class Crud extends \Aplikasi\Kitab\Kawal
 			}
 			
 			# semak data
-			//echo '<br>$dataID=' . $dataID . '<br>';
 			echo '<pre>$_POST='; print_r($_POST) . '</pre>';
 			echo '<pre>$posmen='; print_r($posmen) . '</pre>';
  
 		# mula ulang $senarai
 		foreach ($senarai as $kunci => $jadual)
 		{# tanya sql sama ada papar atau simpan
-			$this->tanya->ubahSqlSimpan
-			//ubahSimpan
+			$this->tanya->ubahSqlSimpan//ubahSimpan
 			($posmen[$jadual], $jadual, $medanID);
 		}# tamat ulang $senarai
         
