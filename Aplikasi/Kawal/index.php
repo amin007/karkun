@@ -8,6 +8,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		echo '<br>class Index extends Kawal';
 		parent::__construct();
         \Aplikasi\Kitab\Kebenaran::kawalMasuk();
+		$this->_folder = 'index';
 	}
 	
 	function index() 
@@ -15,7 +16,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin';
 		# pergi papar kandungan
-		$this->papar->baca('index/index');
+		$this->papar->baca($this->_folder . '/index');
 	}
 	
 	function muar() 
@@ -30,8 +31,9 @@ class Index extends \Aplikasi\Kitab\Kawal
 		$this->papar->tajuk = 'Login Untuk Muar';
 
 		# pergi papar kandungan
-		//$this->papar->baca('index/muar');
-		$this->papar->baca('mobile/muar');
+		$this->_folder = 'mobile'; # untuk apps mobile
+		$this->papar->baca($this->_folder . '/muar');
+		
 	}
 
 	function putrajaya() 
@@ -39,7 +41,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		//$this->papar->IP=dpt_ip(); # dapatkan senarai IP yang dibenarkan
 		# pergi papar kandungan
-		$this->papar->baca('index/daftar');
+		$this->papar->baca($this->_folder . '/daftar');
 	}
 	
 	function login($user) 
@@ -48,7 +50,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		$this->papar->nama = $user; # dapatkan nama pengguna
 		$this->papar->IP = dpt_ip(); # dapatkan senarai IP yang dibenarkan
 		# pergi papar kandungan
-		$this->papar->baca('index/login');
+		$this->papar->baca($this->_folder . '/login');
 	}
 
 	function login_automatik($user) 
@@ -57,7 +59,7 @@ class Index extends \Aplikasi\Kitab\Kawal
 		$this->papar->nama = $user; # dapatkan nama pengguna
 		$this->papar->IP = dpt_ip(); # dapatkan senarai IP yang dibenarkan
 		# pergi papar kandungan
-		$this->papar->baca('index/login_automatik');
+		$this->papar->baca($this->_folder . '/login_automatik');
 	}
 	
 }
