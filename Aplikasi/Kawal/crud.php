@@ -183,10 +183,10 @@ class Crud extends \Aplikasi\Kitab\Kawal
 					$posmen[$jadual][$keyTEKS] = strtoupper($posmen[$jadual][$keyTEKS]);
 				endif;
 			}//*/ # valid guna if
-			if (isset($posmen[$jadual]['respon']))
-				$posmen[$jadual]['respon']=strtoupper($posmen[$jadual]['respon']);
 			if (isset($posmen[$jadual]['email']))
 				$posmen[$jadual]['email']=strtolower($posmen[$jadual]['email']);
+			//if (isset($posmen[$jadual]['dp_baru']))
+			//	$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));
 			if (isset($posmen[$jadual]['responden']))
 				$posmen[$jadual]['responden']=mb_convert_case($posmen[$jadual]['responden'], MB_CASE_TITLE);
 			if (isset($posmen[$jadual]['password']))
@@ -203,8 +203,6 @@ class Crud extends \Aplikasi\Kitab\Kawal
 					$posmen[$jadual]['password'] = 
 						\Aplikasi\Kitab\Hash::create('sha256', $posmen[$jadual]['password'], HASH_PASSWORD_KEY);
 			}
-			//if (isset($posmen[$jadual]['dp_baru']))
-			//	$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));
 			
 			# semak data
 			//echo '<br>$dataID=' . $dataID . '<br>';
