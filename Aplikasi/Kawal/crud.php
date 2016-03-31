@@ -27,10 +27,52 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		$this->papar->baca($this->_folder . '/tambah');
 	}
 	
-	function papar() 
+	function paparXLimit($cariID = null, $cariApa = null) 
 	{
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
+		$item = 1000; $ms = 1;
+		# kod asas panggil sql
+			$medan = '*'; # papar semua medan
+			$carian[] = array('fix'=>'x=','atau'=>'WHERE','medan'=>$cariID,'apa'=>$cariApa);
+			#foreach ($senaraiJadual as $key => $myTable)
+			#{# mula ulang table
+				# dapatkan bilangan jumlah rekod
+				$bilSemua = $this->tanya->tatasusunanP
+					//cariSemuaData //cariSql //kiraKes
+					($myTable, $medan, $carian);
+				# tentukan bilangan mukasurat. bilangan jumlah rekod
+				//echo '$bilSemua:' . $bilSemua . ', $item:' . $item . ', $ms:' . $ms . '<br>';
+				$jum = pencamSqlLimit($bilSemua, $item, $ms);
+				$susun[] = array_merge($jum, array('kumpul'=>null,'susun'=>null) );
+				$this->papar->bilSemua[$myTable] = $bilSemua;
+				# sql guna limit //$this->papar->cariApa = array();
+				$this->papar->cariApa['data'] = $this->tanya->tatasusunanP
+					//cariSemuaData //cariSql
+					($myTable, $medan, $carian, $susun);
+				# halaman
+				$this->papar->halaman[$myTable] = halaman($jum);
+			#}# tamat ulang table
+		
+		# pergi papar kandungan
+		$this->papar->baca($this->_folder . '/papar');
+	}
+
+	function paparSetLimit($cariID = null, $cariApa = null) 
+	{
+		# Set pemboleubah utama
+		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
+		$item = 1000; $ms = 1;
+		# kod asas panggil sql
+			$medan = '*'; # papar semua medan
+			$carian[] = array('fix'=>'x=','atau'=>'WHERE','medan'=>$cariID,'apa'=>$cariApa);
+			$jum2 = pencamSqlLimit(300, $item, $ms); #
+			$susun[] = array_merge($jum2, array('kumpul'=>null,'susun'=>null) );
+			# tanya Sql
+			$this->papar->cariApa['data'] = $this->tanya->tatasusunanP
+				//cariSemuaData //cariSql
+				($jadual, $medan, $cari, $susun = null);
+		
 		# pergi papar kandungan
 		$this->papar->baca($this->_folder . '/papar');
 	}
