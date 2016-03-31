@@ -8,6 +8,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		//echo '<br>class Crud extends Kawal';
 		parent::__construct();
 		\Aplikasi\Kitab\Kebenaran::kawalMasuk();
+		$this->_folder = 'crud';
 	}
 	
 	function index() 
@@ -15,7 +16,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('crud/index');
+		$this->papar->baca($this->_folder . '/index');
 	}
 	
 	function tambah() 
@@ -23,7 +24,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('crud/tambah');
+		$this->papar->baca($this->_folder . '/tambah');
 	}
 	
 	function papar() 
@@ -31,7 +32,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		# Set pemboleubah utama
 		$this->papar->Tajuk_Muka_Surat='Enjin CRUD';
 		# pergi papar kandungan
-		$this->papar->baca('crud/papar');
+		$this->papar->baca($this->_folder . '/papar');
 	}
 	   
     public function ubah($cariID = null, $medanID = null, $jadualUbah = null) 
@@ -84,7 +85,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		echo '</pre>'; //*/
 		
         # pergi papar kandungan
-        $this->papar->baca('crud/ubah', 0);
+        $this->papar->baca($this->_folder . '/ubah', 0);
 
     }
     
@@ -99,8 +100,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
         $this->papar->lokasi = 'Enjin - Ubah';
 		
 		# pergi papar kandungan
-		//echo '<br>location: ' . URL . 'crud/ubah/' . $dataID . '';
-		header('location: ' . URL . 'crud/ubah/' . $dataID);
+		//echo '<br>location: ' . URL . $this->_folder . '/ubah/' . $dataID . '';
+		header('location: ' . URL . $this->_folder . '/ubah/' . $dataID);
 
 	}
 
@@ -198,8 +199,8 @@ class Crud extends \Aplikasi\Kitab\Kawal
         }// tamat ulang table
         
         # pergi papar kandungan
-		//$this->papar->baca('crud/ubah/' . $dataID);
-		header('location: ' . URL . 'crud/ubah/' . $dataID);
+		//$this->papar->baca($this->_folder . '/ubah/' . $dataID);
+		header('location: ' . URL . $this->_folder . '/ubah/' . $dataID);
  //*/       
     }
 
@@ -217,7 +218,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 		}
 
 		# pergi papar kandungan
-		$this->papar->baca('crud/buang', 1);
+		$this->papar->baca($this->_folder . '/buang', 1);
 
     }
 #==========================================================================================	
