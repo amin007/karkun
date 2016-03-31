@@ -27,8 +27,14 @@ class Crud_Tanya extends \Aplikasi\Kitab\Tanya
 				'keterangan' => '',					  
 				   'jantina' => 'lelaki',
 				  'password' => '123abd456',
+				  'password' => '123abd456',
 				    'terima' => '2016-03-30',
 				     'hasil' => '123654',
+				   'belanja' => '223654',
+				      'gaji' => '323654',
+				      'aset' => '423654',
+				      'staf' => '523654',
+				      'stok' => '623654',
 				));
 		
 		# tiada nilai
