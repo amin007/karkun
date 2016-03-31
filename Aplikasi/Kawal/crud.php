@@ -81,7 +81,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
 				//cariSemuaData //cariSql
 				($jadual, $medan, $cari, $susun = null);
 
-		# semak data
+		/*# semak data
 		echo '<pre>';
 		//echo '<br>$this->papar->cariID:'; print_r($this->papar->cariID); 
 		//echo '<br>$this->papar->cariApa:'; print_r($this->papar->cariApa); 
@@ -89,7 +89,7 @@ class Crud extends \Aplikasi\Kitab\Kawal
  		echo '</pre>'; //*/
 		
 		# pergi papar kandungan
-		//$this->papar->baca($this->_folder . '/papar');
+		$this->papar->baca($this->_folder . '/papar');
 	}
 	   
     public function ubah($cariID = null, $medanID = null, $jadualUbah = null) 
