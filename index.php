@@ -45,11 +45,11 @@ spl_autoload_register(function ($namaClass)
 	//echo '<hr>nama class:' . $class . ' | fail:' . $file . ' | ';
 	$cariFail = GetMatchingFiles(GetContents('Aplikasi'),$class . '.php');
 	//echo '<pre>$cariFail='; print_r($cariFail) . '</pre>';
-	//echo '$failPustaka->' . $cariFail[0]; //*/
+	//echo '$cariFail[0]->' . $cariFail[0] . '<br>'; 
 	
 	# jika fail wujud, masukkan 
 	if (file_exists($cariFail[0])) require $cariFail[0];
-	else echo 'tudak jumpa daa<br>';
+	else echo 'tidak jumpa daa<br>';
 });
 /* 5. istihar class 
  * After registering this autoload function with SPL, the following line
