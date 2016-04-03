@@ -30,7 +30,7 @@ spl_autoload_register(function ($namaClass)
 	# tentukan namespace 
 	$prefix = 'Aplikasi\\Kitab\\'; //echo '<br>' . $prefix;
 	# folder asas bagi namespace prefix
-	$base_dir = __DIR__ . '/' . KITAB . '/'; //echo '<br>' . $base_dir;
+	//$base_dir = __DIR__ . '/' . KITAB . '/'; //echo '<br>' . $base_dir;
 	# does the class use the namespace prefix?
 	$len = strlen($prefix); //echo '<br>' . $len;
 	if (strncmp($prefix, $namaClass, $len) !== 0) 
@@ -39,10 +39,17 @@ spl_autoload_register(function ($namaClass)
 	# dapatkan nama class tanpa namespace
 	$class = substr($namaClass, $len); //echo '<br>' . $relative_class;
 	# dapatkan fail class tanpa namespace
-	$file = $base_dir . str_replace('\\', '/', $class) . '.php';
-	//echo '<br> nama class:' . $class . ' | fail:' . $file;
+	//$file = $base_dir . str_replace('\\', '/', $class) . '.php';
+	
+	# semak kewujudan class
+	//echo '<hr>nama class:' . $class . ' | fail:' . $file . ' | ';
+	$cariFail = GetMatchingFiles(GetContents('Aplikasi'),$class . '.php');
+	//echo '<pre>$cariFail='; print_r($cariFail) . '</pre>';
+	//echo '$failPustaka->' . $cariFail[0]; //*/
+	
 	# jika fail wujud, masukkan 
-	if (file_exists($file)) require $file;
+	if (file_exists($cariFail[0])) require $cariFail[0];
+	else echo 'tudak jumpa daa<br>';
 });
 /* 5. istihar class 
  * After registering this autoload function with SPL, the following line
