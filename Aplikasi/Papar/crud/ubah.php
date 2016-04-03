@@ -22,7 +22,7 @@ else:
 endif;	
 
 # fikir atas umat
-$fikir = new \Aplikasi\Kitab\Fikir; 
+$fikir = new \Aplikasi\Kitab\Vendor\Sultanjdt\Fikir; 
 $fikir->umat();
 ?>
 <h1>Ubah Senarai<?=$mesej?></h1>
