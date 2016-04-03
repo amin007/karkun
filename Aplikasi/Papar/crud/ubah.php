@@ -20,6 +20,10 @@ else:
 	$carian = null;
 	$mesej = '::' . $this->cariID .' tidak jumpa di ' . $this->_jadual;
 endif;	
+
+# fikir atas umat
+$fikir = new \Aplikasi\Kitab\Fikir; 
+$fikir->umat();
 ?>
 <h1>Ubah Senarai<?=$mesej?></h1>
 <div align="center"><form method="GET" action="<?=$mencari?>" class="form-inline" autocomplete="off">
