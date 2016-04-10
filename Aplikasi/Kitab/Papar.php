@@ -10,8 +10,7 @@ class Papar
 #==========================================================================================
 	public function bacaan($nama, $noInclude = false)
 	{
-		//echo 'Anda berada di class Papar<br>' .
-		//'fungsi ' . $nama . '()<br>';
+		//echo 'Anda berada di class Papar::' . $nama . '()<br>';
 
 		if ($noInclude == true) 
 		{
