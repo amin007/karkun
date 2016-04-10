@@ -2,12 +2,12 @@
 namespace Aplikasi\Kitab; //echo __NAMESPACE__; 
 class Papar
 {
-
+#==========================================================================================
 	function __construct() 
 	{
 		//echo '<br>1. Anda berada di class Papar<br>';
 	}
-	
+#==========================================================================================
 	public function bacaan($nama, $noInclude = false)
 	{
 		//echo 'Anda berada di class Papar<br>' .
